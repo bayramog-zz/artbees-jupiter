@@ -272,8 +272,8 @@ function jupiterx_get_layouts_for_options( $add_default = false ) {
 	$layouts = array_merge( array(
 		'default_fallback' => sprintf(
 			// translators: The (%s) placeholder is for the "Modify" hyperlink.
-			__( 'Use Default Layout (%s)', 'jupiterx-lite' ),
-			'<a href="' . admin_url( 'customize.php?autofocus[control]=jupiterx_layout' ) . '">' . _x( 'Modify', 'Default layout', 'jupiterx-lite' ) . '</a>'
+			__( 'Use Default Layout (%s)', 'jupiterx' ),
+			'<a href="' . admin_url( 'customize.php?autofocus[control]=jupiterx_layout' ) . '">' . _x( 'Modify', 'Default layout', 'jupiterx' ) . '</a>'
 		),
 	), $layouts );
 

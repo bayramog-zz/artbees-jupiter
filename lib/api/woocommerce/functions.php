@@ -114,7 +114,7 @@ function jupiterx_wc_continue_shopping_button() {
 		]
 	);
 
-		esc_html_e( 'Continue Shopping', 'jupiterx-lite' );
+		esc_html_e( 'Continue Shopping', 'jupiterx' );
 
 	jupiterx_close_markup_e( 'jupiterx_continue_shopping_button', 'a' );
 }

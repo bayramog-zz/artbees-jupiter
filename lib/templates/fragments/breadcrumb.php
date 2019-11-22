@@ -45,7 +45,7 @@ function jupiterx_breadcrumb() {
 
 	$post_type                 = get_post_type();
 	$breadcrumbs               = array();
-	$breadcrumbs[ home_url() ] = __( 'Home', 'jupiterx-lite' );
+	$breadcrumbs[ home_url() ] = __( 'Home', 'jupiterx' );
 
 	// Custom post type.
 	if ( ! in_array( $post_type, array( 'page', 'attachment', 'post' ), true ) && ! is_404() && ! is_author() ) {
@@ -102,16 +102,16 @@ function jupiterx_breadcrumb() {
 
 		$breadcrumbs[] = $current_term->name;
 	} elseif ( is_search() ) { // Searches.
-		$breadcrumbs[] = __( 'Search results for:', 'jupiterx-lite' ) . ' ' . get_search_query();
+		$breadcrumbs[] = __( 'Search results for:', 'jupiterx' ) . ' ' . get_search_query();
 	} elseif ( is_author() ) { // Author archives.
 		$author        = get_queried_object();
-		$breadcrumbs[] = __( 'Author Archives:', 'jupiterx-lite' ) . ' ' . $author->display_name;
+		$breadcrumbs[] = __( 'Author Archives:', 'jupiterx' ) . ' ' . $author->display_name;
 	} elseif ( is_tag() ) {// Tag archives.
-		$breadcrumbs[] = __( 'Tag Archives:', 'jupiterx-lite' ) . ' ' . single_tag_title( '', false );
+		$breadcrumbs[] = __( 'Tag Archives:', 'jupiterx' ) . ' ' . single_tag_title( '', false );
 	} elseif ( is_date() ) { // Date archives.
-		$breadcrumbs[] = __( 'Archives:', 'jupiterx-lite' ) . ' ' . get_the_time( 'F Y' );
+		$breadcrumbs[] = __( 'Archives:', 'jupiterx' ) . ' ' . get_the_time( 'F Y' );
 	} elseif ( is_404() ) { // 404.
-		$breadcrumbs[] = __( '404', 'jupiterx-lite' );
+		$breadcrumbs[] = __( '404', 'jupiterx' );
 	}
 
 	/**

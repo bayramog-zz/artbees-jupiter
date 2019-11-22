@@ -247,3 +247,16 @@ function jupiterx_is_location_conditions_set( $location, $sub_location ) {
 
 	return false;
 }
+
+add_action( 'elementor/theme/register_locations', 'jupiterx_theme_register_elementor_locations' );
+/**
+ * Register Elementor theme locations.
+ *
+ * @since 1.13.0
+ *
+ * @param ThemeBuilder $elementor_theme_manager Theme builder class.
+ */
+function jupiterx_theme_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_location( 'header' );
+	$elementor_theme_manager->register_location( 'footer' );
+}

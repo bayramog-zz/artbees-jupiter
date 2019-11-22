@@ -48,11 +48,11 @@ class JupiterX_Theme_Core_Install {
 		wp_localize_script( 'jupiterx-core-install', 'jupiterxCoreInstall', [
 			'controlPanelUrl' => admin_url( 'admin.php?page=' . JUPITERX_SLUG ),
 			'i18n'            => [
-				'idle'            => __( 'Activate Jupiter X Core Plugin', 'jupiterx-lite' ),
-				'installing'      => __( 'Installing plugin...', 'jupiterx-lite' ),
-				'activating'      => __( 'Activating plugin...', 'jupiterx-lite' ),
-				'completed'       => __( 'Plugin activation completed.', 'jupiterx-lite' ),
-				'errorActivating' => __( 'There was an issue during the activation process.', 'jupiterx-lite' ),
+				'idle'            => __( 'Activate Jupiter X Core Plugin', 'jupiterx' ),
+				'installing'      => __( 'Installing plugin...', 'jupiterx' ),
+				'activating'      => __( 'Activating plugin...', 'jupiterx' ),
+				'completed'       => __( 'Plugin activation completed.', 'jupiterx' ),
+				'errorActivating' => __( 'There was an issue during the activation process.', 'jupiterx' ),
 			],
 		] );
 	}
@@ -77,11 +77,11 @@ class JupiterX_Theme_Core_Install {
 		<div id="jupiterx-core-install-notice" class="updated jupiterx-core-install-notice notice is-dismissible">
 			<?php wp_nonce_field( 'jupiterx-core-installer-nonce', 'jupiterx-core-installer-notice-nonce' ); ?>
 			<div class="jupiterx-core-install-notice-logo">
-				<img src="<?php echo esc_url( JUPITERX_ADMIN_ASSETS_URL . 'images/jupiterx-notice-logo.png' ); ?>" alt="<?php esc_html_e( 'Jupiter X', 'jupiterx-lite' ); ?>" />
+				<img src="<?php echo esc_url( JUPITERX_ADMIN_ASSETS_URL . 'images/jupiterx-notice-logo.png' ); ?>" alt="<?php esc_html_e( 'Jupiter X', 'jupiterx' ); ?>" />
 			</div>
 			<div class="jupiterx-core-install-notice-content">
-				<h2><?php esc_html_e( 'Almost done! 👋', 'jupiterx-lite' ); ?></h2>
-				<p><?php esc_html_e( 'To complete the installation and unlock more features, we highly recommend to activate Jupiter X Core plugin.', 'jupiterx-lite' ); ?></p>
+				<h2><?php esc_html_e( 'Almost done! 👋', 'jupiterx' ); ?></h2>
+				<p><?php esc_html_e( 'To complete the installation and unlock more features, we highly recommend to activate Jupiter X Core plugin.', 'jupiterx' ); ?></p>
 				<?php $this->install_notice_button(); ?>
 			</div>
 		</div>
@@ -123,7 +123,7 @@ class JupiterX_Theme_Core_Install {
 			<span class="button-text">
 			<?php
 				/* translators: The install/activate action */
-				printf( esc_html__( '%s Jupiter X Core Plugin', 'jupiterx-lite' ), esc_html( $action ) );
+				printf( esc_html__( '%s Jupiter X Core Plugin', 'jupiterx' ), esc_html( $action ) );
 			?>
 			</span>
 		</a>

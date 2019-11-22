@@ -130,3 +130,49 @@ function jupiterx_get_images_dir() {
 
 	return wp_normalize_path( trailingslashit( $dir ) );
 }
+
+/**
+ * Register custom image sizes.
+ *
+ * @since 1.13.0
+ *
+ * @return void
+ */
+function jupiterx_register_image_sizes() {
+
+	if ( ! function_exists( 'jupiterx_core' ) ) {
+		return;
+	}
+
+	jupiterx_core()->load_files( [
+		'control-panel/includes/class-image-sizes',
+	] );
+
+	$image_sizes = JupiterX_Control_Panel_Image_Sizes::get_available_image_sizes();
+	$image_names = [];
+
+	if ( ! empty( $image_sizes ) ) {
+		foreach ( $image_sizes as $size ) {
+
+			$width  = absint( $size['size_w'] );
+			$height = absint( $size['size_h'] );
+
+			$is_valid_width  = ( ! empty( $width ) && $width > 0 ) ? true : false;
+			$is_valid_height = ( ! empty( $height ) && $height > 0 ) ? true : false;
+
+			if ( ! $is_valid_width || ! $is_valid_height ) {
+				continue;
+			}
+
+			$crop = ( isset( $size['size_c'] ) && 'on' === $size['size_c'] ) ? true : false;
+
+			add_image_size( $size['size_n'], $width, $height, $crop );
+
+			$image_names[ $size['size_n'] ] = $size['size_n'];
+		}
+	}
+
+	add_filter( 'image_size_names_choose', function ( $sizes ) use ( $image_names ) {
+		return array_merge( $sizes, $image_names );
+	} );
+}

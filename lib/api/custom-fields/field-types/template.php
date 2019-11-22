@@ -25,7 +25,7 @@ class JupiterX_Field_Template extends acf_field {
 	 */
 	public function __construct() {
 		$this->name     = 'jupiterx_template';
-		$this->label    = __( 'Template', 'jupiterx-lite' );
+		$this->label    = __( 'Template', 'jupiterx' );
 		$this->category = 'choice';
 
 		parent::__construct();
@@ -54,8 +54,8 @@ class JupiterX_Field_Template extends acf_field {
 				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $field['value'], $value ); ?>><?php echo esc_html( $label ); ?></option>
 			<?php } ?>
 		</select>
-		<a class="edit-button button"><?php esc_html_e( 'Edit', 'jupiterx-lite' ); ?></a>
-		<a class="new-button button"><?php esc_html_e( 'New', 'jupiterx-lite' ); ?></a>
+		<a class="edit-button button"><?php esc_html_e( 'Edit', 'jupiterx' ); ?></a>
+		<a class="new-button button"><?php esc_html_e( 'New', 'jupiterx' ); ?></a>
 		<?php
 	}
 }

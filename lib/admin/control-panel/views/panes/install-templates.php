@@ -7,7 +7,7 @@ if ( ! JUPITERX_CONTROL_PANEL_TEMPLATES ) {
 	<div class="jupiterx-cp-message">
 	<h4><?php
 		printf(
-			__( 'Please <a href="%s">install/update</a> "Jupiter X Core" plugin to enable this feature.', 'jupiterx-lite' ),
+			__( 'Please <a href="%s">install/update</a> "Jupiter X Core" plugin to enable this feature.', 'jupiterx' ),
 			admin_url( 'themes.php?page=tgmpa-install-plugins' )
 		);
 	?></h4>

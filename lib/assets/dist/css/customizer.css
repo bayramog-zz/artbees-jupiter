@@ -2717,9 +2717,16 @@ input[type=radio].jupiterx-radio-image-control-radio:checked + .jupiterx-radio-i
 }
 
 .jupiterx-template-control .jupiterx-button {
+  position: relative;
   margin-right: 10px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.jupiterx-template-control .jupiterx-button .jupiterx-control-pro-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
 }
 
 .jupiterx-template-control.jupiterx-loading {

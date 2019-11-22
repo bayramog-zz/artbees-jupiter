@@ -21,7 +21,7 @@ function jupiterx_define_constants() {
 
 	// Define premium.
 	if ( ! defined( 'JUPITERX_PREMIUM' ) ) {
-		define( 'JUPITERX_PREMIUM', false );
+		define( 'JUPITERX_PREMIUM', true );
 	}
 
 	// Define version.
@@ -103,6 +103,7 @@ function jupiterx_load_dependencies() {
 		'menu',
 		'widget',
 		'footer',
+		'onboarding',
 	];
 
 	if ( class_exists( 'Elementor\Plugin' ) ) {
@@ -162,31 +163,7 @@ function jupiterx_add_theme_support() {
 	add_theme_support( 'wc-product-gallery-slider' );
 	add_theme_support( 'woocommerce' );
 
-	/**
-	 * Image sizes.
-	 *
-	 * @todo Find a possible better place to add the functions.
-	 */
-	$image_sizes = get_option( JUPITERX_IMAGE_SIZE_OPTION );
-
-	if ( ! empty( $image_sizes ) ) {
-		foreach ( $image_sizes as $size ) {
-
-			$width  = absint( $size['size_w'] );
-			$height = absint( $size['size_h'] );
-
-			$is_valid_width  = ( ! empty( $width ) && $width > 0 ) ? true : false;
-			$is_valid_height = ( ! empty( $height ) && $height > 0 ) ? true : false;
-
-			if ( ! $is_valid_width || ! $is_valid_height ) {
-				continue;
-			}
-
-			$crop = ( isset( $size['size_c'] ) && 'on' === $size['size_c'] ) ? true : false;
-
-			add_image_size( $size['size_n'], $width, $height, $crop );
-		}
-	}
+	jupiterx_register_image_sizes();
 }
 
 add_action( 'jupiterx_init', 'jupiterx_includes' );
@@ -206,7 +183,10 @@ function jupiterx_includes() {
 		require_once JUPITERX_ADMIN_PATH . 'assets.php';
 		require_once JUPITERX_ADMIN_PATH . 'core-install/core-install.php';
 		require_once JUPITERX_ADMIN_PATH . 'functions.php';
+		require_once JUPITERX_ADMIN_PATH . 'license-manager.php';
 		require_once JUPITERX_ADMIN_PATH . 'control-panel/control-panel.php';
+		require_once JUPITERX_ADMIN_PATH . 'setup-wizard/setup-wizard.php';
+		require_once JUPITERX_ADMIN_PATH . 'update-theme/class-update-theme.php';
 	}
 
 	// Include assets.
@@ -287,7 +267,18 @@ add_action( 'jupiterx_init', 'jupiterx_load_textdomain' );
  * @return void
  */
 function jupiterx_load_textdomain() {
-	load_theme_textdomain( 'jupiterx-lite', JUPITERX_LANGUAGES_PATH );
+	load_theme_textdomain( 'jupiterx', JUPITERX_LANGUAGES_PATH );
+}
+add_action( 'jupiterx_before_init', 'jupiterx_load_pro', -1 );
+/**
+ * Load pro functions.
+ *
+ * @since 1.6.0
+ *
+ * @return void
+ */
+function jupiterx_load_pro() {
+	require_once trailingslashit( get_template_directory() ) . 'lib/pro/pro.php';
 }
 
 /**

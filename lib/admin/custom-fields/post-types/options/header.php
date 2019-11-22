@@ -14,7 +14,7 @@ $parent = 'group_jupiterx_post';
 acf_add_local_field( [
 	'key'    => "{$key}_tab",
 	'parent' => $parent,
-	'label'  => __( 'Header', 'jupiterx-lite' ),
+	'label'  => __( 'Header', 'jupiterx' ),
 	'type'   => 'tab',
 ] );
 
@@ -22,7 +22,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'           => $key,
 	'parent'        => $parent,
-	'label'         => __( 'Header', 'jupiterx-lite' ),
+	'label'         => __( 'Header', 'jupiterx' ),
 	'name'          => 'jupiterx_header',
 	'type'          => 'true_false',
 	'wrapper'       => [ 'width' => '50' ],
@@ -34,7 +34,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_overlap",
 	'parent'            => $parent,
-	'label'             => __( 'Overlap Content', 'jupiterx-lite' ),
+	'label'             => __( 'Overlap Content', 'jupiterx' ),
 	'name'              => 'jupiterx_header_overlap',
 	'type'              => 'button_group',
 	'conditional_logic' => [
@@ -48,9 +48,9 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => [
-		'global' => __( 'Global', 'jupiterx-lite' ),
-		'1'      => __( 'Yes', 'jupiterx-lite' ),
-		''       => __( 'No', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
+		'1'      => __( 'Yes', 'jupiterx' ),
+		''       => __( 'No', 'jupiterx' ),
 	],
 	'default_value'     => 'global',
 ] );
@@ -59,7 +59,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_type",
 	'parent'            => $parent,
-	'label'             => __( 'Type', 'jupiterx-lite' ),
+	'label'             => __( 'Type', 'jupiterx' ),
 	'name'              => 'jupiterx_header_type',
 	'type'              => 'button_group',
 	'conditional_logic' => [
@@ -73,8 +73,8 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => [
-		'global'  => __( 'Global', 'jupiterx-lite' ),
-		'_custom' => __( 'Custom', 'jupiterx-lite' ),
+		'global'  => __( 'Global', 'jupiterx' ),
+		'_custom' => __( 'Custom', 'jupiterx' ),
 	],
 	'default_value'     => 'global',
 ] );
@@ -83,7 +83,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_header_template",
 	'parent'            => $parent,
-	'label'             => __( 'Template', 'jupiterx-lite' ),
+	'label'             => __( 'Template', 'jupiterx' ),
 	'name'              => 'jupiterx_header_template',
 	'type'              => 'jupiterx_template',
 	'conditional_logic' => [
@@ -102,7 +102,7 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => JupiterX_Customizer_Utils::get_templates( 'header', [
-		'global' => __( 'Global', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
 	] ),
 	'default_value'     => 'global',
 	'template_type'     => 'header',
@@ -119,7 +119,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_behavior",
 	'parent'            => $parent,
-	'label'             => __( 'Behavior', 'jupiterx-lite' ),
+	'label'             => __( 'Behavior', 'jupiterx' ),
 	'name'              => 'jupiterx_header_behavior',
 	'type'              => 'button_group',
 	'conditional_logic' => [
@@ -133,10 +133,10 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => [
-		'global' => __( 'Global', 'jupiterx-lite' ),
-		'static' => __( 'Static', 'jupiterx-lite' ),
-		'fixed'  => __( 'Fixed', 'jupiterx-lite' ),
-		'sticky' => __( 'Sticky', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
+		'static' => __( 'Static', 'jupiterx' ),
+		'fixed'  => __( 'Fixed', 'jupiterx' ),
+		'sticky' => __( 'Sticky', 'jupiterx' ),
 	],
 	'default_value'     => 'global',
 ] );
@@ -145,7 +145,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_sticky_offset",
 	'parent'            => $parent,
-	'label'             => __( 'Offset', 'jupiterx-lite' ),
+	'label'             => __( 'Offset', 'jupiterx' ),
 	'name'              => 'jupiterx_header_offset',
 	'type'              => 'number',
 	'conditional_logic' => [
@@ -166,7 +166,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_position",
 	'parent'            => $parent,
-	'label'             => __( 'Position', 'jupiterx-lite' ),
+	'label'             => __( 'Position', 'jupiterx' ),
 	'name'              => 'jupiterx_header_position',
 	'type'              => 'button_group',
 	'conditional_logic' => [
@@ -185,9 +185,9 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => [
-		'global'  => __( 'Global', 'jupiterx-lite' ),
-		'top'     => __( 'Top', 'jupiterx-lite' ),
-		'bottom'  => __( 'Bottom', 'jupiterx-lite' ),
+		'global'  => __( 'Global', 'jupiterx' ),
+		'top'     => __( 'Top', 'jupiterx' ),
+		'bottom'  => __( 'Bottom', 'jupiterx' ),
 	],
 	'default_value'     => 'global',
 ] );
@@ -196,7 +196,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_sticky_template",
 	'parent'            => $parent,
-	'label'             => __( 'Sticky Template', 'jupiterx-lite' ),
+	'label'             => __( 'Sticky Template', 'jupiterx' ),
 	'name'              => 'jupiterx_header_sticky_template',
 	'type'              => 'jupiterx_template',
 	'conditional_logic' => [
@@ -220,7 +220,7 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => JupiterX_Customizer_Utils::get_templates( 'header', [
-		'global' => __( 'Global', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
 	] ),
 	'default_value'     => 'global',
 	'template_type'     => 'header',

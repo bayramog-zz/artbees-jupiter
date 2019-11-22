@@ -32,6 +32,6 @@ foreach ( array_unique( $jupiterx_post_types ) as $jupiterx_post_type ) { // php
 // Post Options.
 acf_add_local_field_group( [
 	'key'      => 'group_jupiterx_post',
-	'title'    => __( 'Post Options', 'jupiterx-lite' ),
+	'title'    => __( 'Post Options', 'jupiterx' ),
 	'location' => $locations,
 ] );

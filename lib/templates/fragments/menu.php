@@ -76,7 +76,7 @@ function jupiterx_no_menu_notice() {
 
 	jupiterx_open_markup_e( 'jupiterx_no_menu_notice', 'div', [ 'class' => 'alert alert-warning mb-0 mr-2 ml-auto' ] );
 
-		jupiterx_output_e( 'jupiterx_no_menu_notice_text', __( 'Whoops, your site does not have a menu!', 'jupiterx-lite' ) );
+		jupiterx_output_e( 'jupiterx_no_menu_notice_text', __( 'Whoops, your site does not have a menu!', 'jupiterx' ) );
 
 	jupiterx_close_markup_e( 'jupiterx_no_menu_notice', 'div' );
 }

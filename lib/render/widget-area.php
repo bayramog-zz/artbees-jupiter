@@ -18,18 +18,18 @@ jupiterx_add_smart_action( 'widgets_init', 'jupiterx_do_register_widget_areas', 
 function jupiterx_do_register_widget_areas() {
 	// Keep primary sidebar first for default widget asignment.
 	jupiterx_register_widget_area( [
-		'name' => __( 'Sidebar Primary', 'jupiterx-lite' ),
+		'name' => __( 'Sidebar Primary', 'jupiterx' ),
 		'id'   => 'sidebar_primary',
 	] );
 
 	jupiterx_register_widget_area( [
-		'name' => __( 'Sidebar Secondary', 'jupiterx-lite' ),
+		'name' => __( 'Sidebar Secondary', 'jupiterx' ),
 		'id'   => 'sidebar_secondary',
 	] );
 
 	if ( current_theme_supports( 'offcanvas-menu' ) ) {
 		jupiterx_register_widget_area( [
-			'name'       => __( 'Off-Canvas Menu', 'jupiterx-lite' ),
+			'name'       => __( 'Off-Canvas Menu', 'jupiterx' ),
 			'id'         => 'offcanvas_menu',
 			'jupiterx_type' => 'offcanvas',
 		] );
@@ -40,7 +40,7 @@ function jupiterx_do_register_widget_areas() {
 	for ( $i = 1; $i <= $columns_count; $i++ ) {
 		jupiterx_register_widget_area( [
 			// Translators: Number of widget area in footer.
-			'name' => sprintf( esc_html__( 'Footer %d', 'jupiterx-lite' ), $i ),
+			'name' => sprintf( esc_html__( 'Footer %d', 'jupiterx' ), $i ),
 			'id'   => 'footer_widgets_column_' . $i,
 		] );
 	}

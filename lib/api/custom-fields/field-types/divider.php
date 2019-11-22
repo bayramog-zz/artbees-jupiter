@@ -29,7 +29,7 @@ class JupiterX_Field_Divider extends acf_field {
 		$this->name = 'jupiterx-divider';
 
 		// label (string) Multiple words, can include spaces, visible when selecting a field type.
-		$this->label = __( 'Divider', 'jupiterx-lite' );
+		$this->label = __( 'Divider', 'jupiterx' );
 
 		// category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME.
 		$this->category = 'layout';

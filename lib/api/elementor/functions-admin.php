@@ -97,7 +97,7 @@ function jupiterx_elementor_edit_template() {
 	$document = Elementor\Plugin::instance()->documents->get( absint( $_GET['post'] ) );
 
 	if ( ! $document || ! $document->is_editable_by_current_user() ) {
-		wp_die( esc_html__( 'Raven plugin is disabled. Please enable Raven plugin to be able to edit this template.', 'jupiterx-lite' ) );
+		wp_die( esc_html__( 'Raven plugin is disabled. Please enable Raven plugin to be able to edit this template.', 'jupiterx' ) );
 	}
 }
 
@@ -188,7 +188,7 @@ function jupiterx_elementor_editor_enqueue_scripts() {
 
 	if ( jupiterx_is_premium() || function_exists( 'jupiterx_pro' ) ) {
 		wp_add_inline_script( 'jupiterx-common', 'var jupiterxPremium = true;', 'before' );
-		wp_add_inline_script( 'jupiterx-common', 'var jupiterXControlPanelURL = "' . esc_url( admin_url( '?page=jupiterx' ) ) . '";', 'before' );
+		wp_add_inline_script( 'jupiterx-common', 'var jupiterXControlPanelURL = "' . esc_url( admin_url( 'admin.php?page=jupiterx' ) ) . '";', 'before' );
 	}
 }
 

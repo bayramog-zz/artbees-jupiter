@@ -13,12 +13,12 @@ acf_add_local_field_group(array(
 	'fields' => [
 		[
 			'key'               => 'menu_template',
-			'label'             => __( 'Mega Menu Template', 'jupiterx-lite' ),
+			'label'             => __( 'Mega Menu Template', 'jupiterx' ),
 			'name'              => 'jupiterx_mega_template',
 			'type'              => 'jupiterx_template',
 			'wrapper'           => [ 'width' => '100' ],
 			'choices'           => JupiterX_Customizer_Utils::get_templates( 'section', [
-				'global' => __( 'None', 'jupiterx-lite' ),
+				'global' => __( 'None', 'jupiterx' ),
 			] ),
 			'default_value'     => 'global',
 			'template_type'     => 'section',

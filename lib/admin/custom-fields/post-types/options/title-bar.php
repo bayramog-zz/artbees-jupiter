@@ -14,7 +14,7 @@ $parent = 'group_jupiterx_post';
 acf_add_local_field( [
 	'key'    => "{$key}_tab",
 	'parent' => $parent,
-	'label'  => __( 'Title Bar', 'jupiterx-lite' ),
+	'label'  => __( 'Title Bar', 'jupiterx' ),
 	'type'   => 'tab',
 ] );
 
@@ -22,14 +22,14 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'           => "{$key}_title",
 	'parent'        => $parent,
-	'label'         => __( 'Title', 'jupiterx-lite' ),
+	'label'         => __( 'Title', 'jupiterx' ),
 	'name'          => 'jupiterx_title_bar_title',
 	'type'          => 'button_group',
 	'wrapper'       => [ 'width' => '50' ],
 	'choices'       => [
-		'global' => __( 'Global', 'jupiterx-lite' ),
-		'1'      => __( 'Yes', 'jupiterx-lite' ),
-		''       => __( 'No', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
+		'1'      => __( 'Yes', 'jupiterx' ),
+		''       => __( 'No', 'jupiterx' ),
 	],
 	'default_value' => 'global',
 ] );
@@ -38,14 +38,14 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'           => "{$key}_breadcrumb",
 	'parent'        => $parent,
-	'label'         => __( 'Breadcrumb', 'jupiterx-lite' ),
+	'label'         => __( 'Breadcrumb', 'jupiterx' ),
 	'name'          => 'jupiterx_title_bar_breadcrumb',
 	'type'          => 'button_group',
 	'wrapper'       => [ 'width' => '50' ],
 	'choices'       => [
-		'global' => __( 'Global', 'jupiterx-lite' ),
-		'1'      => __( 'Yes', 'jupiterx-lite' ),
-		''       => __( 'No', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
+		'1'      => __( 'Yes', 'jupiterx' ),
+		''       => __( 'No', 'jupiterx' ),
 	],
 	'default_value' => 'global',
 ] );

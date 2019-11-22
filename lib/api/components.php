@@ -70,6 +70,7 @@ function jupiterx_load_api_components( $components ) {
 			'options'    => $root . 'options/functions.php',
 			'elementor'  => $root . 'elementor/functions-admin.php',
 			'api'        => $root . 'api/ajax.php',
+			'onboarding' => $root . 'onboarding/functions.php',
 		];
 	} else {
 		$admin = [];

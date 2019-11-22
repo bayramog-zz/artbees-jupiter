@@ -19,53 +19,103 @@ function jupiterx_register_tgmpa_plugins() {
 	if ( ! jupiterx_is_premium() ) :
 		$free_plugins = [
 			[
-				'name' => __( 'Jupiter X Core', 'jupiterx-lite' ),
+				'name' => __( 'Jupiter X Core', 'jupiterx' ),
 				'slug' => 'jupiterx-core',
 				'required' => false,
 				'force_activation' => false,
 				'force_deactivation' => false,
 			],
 			[
-				'name' => __( 'Elementor', 'jupiterx-lite' ),
+				'name' => __( 'Elementor', 'jupiterx' ),
 				'slug' => 'elementor',
 				'required' => false,
 				'force_activation' => false,
 				'force_deactivation' => false,
 			],
 			[
-				'name' => __( 'Advanced Custom Fields', 'jupiterx-lite' ),
+				'name' => __( 'Advanced Custom Fields', 'jupiterx' ),
 				'slug' => 'advanced-custom-fields',
 				'required' => false,
 				'force_activation' => false,
 				'force_deactivation' => false,
 			],
 			[
-				'name' => __( 'Lazy Load', 'jupiterx-lite' ),
+				'name' => __( 'Lazy Load', 'jupiterx' ),
 				'slug' => 'lazy-load',
 				'required' => false,
 				'force_activation' => false,
 				'force_deactivation' => false,
-				'label_type' => __( 'Optional', 'jupiterx-lite' ),
+				'label_type' => __( 'Optional', 'jupiterx' ),
 			],
 			[
-				'name' => __( 'Woocommerce', 'jupiterx-lite' ),
+				'name' => __( 'Woocommerce', 'jupiterx' ),
 				'slug' => 'woocommerce',
 				'required' => false,
 				'force_activation' => false,
 				'force_deactivation' => false,
-				'label_type' => __( 'Optional', 'jupiterx-lite' ),
+				'label_type' => __( 'Optional', 'jupiterx' ),
 			],
 			[
-				'name' => __( 'Menu Icons by ThemeIsle', 'jupiterx-lite' ),
+				'name' => __( 'Menu Icons by ThemeIsle', 'jupiterx' ),
 				'slug' => 'menu-icons',
 				'required' => false,
 				'force_activation' => false,
 				'force_deactivation' => false,
-				'label_type' => __( 'Optional', 'jupiterx-lite' ),
+				'label_type' => __( 'Optional', 'jupiterx' ),
 			],
 		];
 
 		$plugins = apply_filters( 'jupiterx_tgmpa_plugins', $free_plugins );
+	else :
+		$plugins = get_transient( 'jupiterx_tgmpa_plugins' );
+		if ( false === $plugins && jupiterx_is_premium() ) {
+			$headers = [
+				'api-key'      => jupiterx_get_api_key(),
+				'domain'       => $_SERVER['SERVER_NAME'], // phpcs:ignore
+				'theme-name'   => 'JupiterX',
+				'from'         => 0,
+				'count'        => 0,
+				'list-of-attr' => wp_json_encode( [
+					'name',
+					'slug',
+					'required',
+					'version',
+					'source',
+					'pro',
+					'label_type',
+				] ),
+			];
+
+			$response = json_decode( wp_remote_retrieve_body( wp_remote_get( 'https://artbees.net/api/v2/tools/plugin-custom-list', [
+				'headers'   => $headers,
+			] ) ) );
+
+			if ( ! isset( $response->data ) && ! is_array( $response->data ) ) {
+				return;
+			}
+
+			$wp_plugins = [];
+
+			foreach ( $response->data as $index => $plugin ) {
+				$plugins[ $index ] = (array) $plugin;
+
+				if ( 'wp-repo' === $plugin->source ) {
+					unset( $plugins[ $index ]['source'] );
+					unset( $plugins[ $index ]['version'] );
+
+					$wp_plugins[] = $plugins[ $index ];
+				}
+
+				if (
+					! empty( $plugins[ $index ]['label_type'] ) &&
+					'Optional' === $plugins[ $index ]['label_type']
+				) {
+					$plugins[ $index ]['label_type'] = __( 'Optional', 'jupiterx' );
+				}
+			}
+
+			set_transient( 'jupiterx_tgmpa_plugins', $plugins, 12 * HOUR_IN_SECONDS );
+		}
 	endif;
 
 	$config = [
@@ -95,7 +145,7 @@ add_filter( 'tgmpa_network_admin_plugin_action_links', 'jupiterx_tgmpa_go_pro_li
  */
 function jupiterx_tgmpa_go_pro_link( $action_links ) {
 	if ( isset( $action_links['pro'] ) ) {
-		$action_links['pro'] = '<a href="' . esc_url( jupiterx_upgrade_link( 'plugins' ) ) . '" class="jupiterx-tgmpa-pro-plugin-action-link" target="_blank">' . __( 'Go Pro', 'jupiterx-lite' ) . '<span class="screen-reader-text">' . __( 'Buy Jupiter X', 'jupiterx-lite' ) . '</span></a>';
+		$action_links['pro'] = '<a href="' . esc_url( jupiterx_upgrade_link( 'plugins' ) ) . '" class="jupiterx-tgmpa-pro-plugin-action-link" target="_blank">' . __( 'Go Pro', 'jupiterx' ) . '<span class="screen-reader-text">' . __( 'Buy Jupiter X', 'jupiterx' ) . '</span></a>';
 	}
 
 	return $action_links;

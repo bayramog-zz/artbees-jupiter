@@ -14,7 +14,7 @@ $parent = 'group_jupiterx_post';
 acf_add_local_field( [
 	'key'    => "{$key}_tab",
 	'parent' => $parent,
-	'label'  => __( 'Footer', 'jupiterx-lite' ),
+	'label'  => __( 'Footer', 'jupiterx' ),
 	'type'   => 'tab',
 ] );
 
@@ -22,7 +22,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'           => $key,
 	'parent'        => $parent,
-	'label'         => __( 'Footer', 'jupiterx-lite' ),
+	'label'         => __( 'Footer', 'jupiterx' ),
 	'name'          => 'jupiterx_footer',
 	'type'          => 'true_false',
 	'wrapper'       => [ 'width' => '50' ],
@@ -34,7 +34,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_type",
 	'parent'            => $parent,
-	'label'             => __( 'Type', 'jupiterx-lite' ),
+	'label'             => __( 'Type', 'jupiterx' ),
 	'name'              => 'jupiterx_footer_type',
 	'type'              => 'button_group',
 	'conditional_logic' => [
@@ -48,8 +48,8 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => [
-		'global'  => __( 'Global', 'jupiterx-lite' ),
-		'_custom' => __( 'Custom', 'jupiterx-lite' ),
+		'global'  => __( 'Global', 'jupiterx' ),
+		'_custom' => __( 'Custom', 'jupiterx' ),
 	],
 	'default_value'     => 'global',
 ] );
@@ -58,7 +58,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'               => "{$key}_template",
 	'parent'            => $parent,
-	'label'             => __( 'Template', 'jupiterx-lite' ),
+	'label'             => __( 'Template', 'jupiterx' ),
 	'name'              => 'jupiterx_footer_template',
 	'type'              => 'jupiterx_template',
 	'conditional_logic' => [
@@ -72,7 +72,7 @@ acf_add_local_field( [
 	],
 	'wrapper'           => [ 'width' => '50' ],
 	'choices'           => JupiterX_Customizer_Utils::get_templates( 'footer', [
-		'global' => __( 'Global', 'jupiterx-lite' ),
+		'global' => __( 'Global', 'jupiterx' ),
 	] ),
 	'default_value'     => 'global',
 	'template_type'     => 'footer',
@@ -90,7 +90,7 @@ if ( '_custom' !== get_theme_mod( 'jupiterx_footer_type', '' ) ) {
 	acf_add_local_field( [
 		'key'     => "{$key}_widget_area",
 		'parent'  => $parent,
-		'label'   => __( 'Widget Area', 'jupiterx-lite' ),
+		'label'   => __( 'Widget Area', 'jupiterx' ),
 		'name'    => 'jupiterx_footer_widget_area',
 		'type'    => 'button_group',
 		'conditional_logic' => [
@@ -109,9 +109,9 @@ if ( '_custom' !== get_theme_mod( 'jupiterx_footer_type', '' ) ) {
 		],
 		'wrapper' => [ 'width' => '50' ],
 		'choices' => [
-			'global' => __( 'Global', 'jupiterx-lite' ),
-			'1'      => __( 'Yes', 'jupiterx-lite' ),
-			''       => __( 'No', 'jupiterx-lite' ),
+			'global' => __( 'Global', 'jupiterx' ),
+			'1'      => __( 'Yes', 'jupiterx' ),
+			''       => __( 'No', 'jupiterx' ),
 		],
 		'default_value' => 'global',
 	] );
@@ -120,7 +120,7 @@ if ( '_custom' !== get_theme_mod( 'jupiterx_footer_type', '' ) ) {
 	acf_add_local_field( [
 		'key'           => "{$key}_sub",
 		'parent'        => $parent,
-		'label'         => __( 'Sub Footer', 'jupiterx-lite' ),
+		'label'         => __( 'Sub Footer', 'jupiterx' ),
 		'name'          => 'jupiterx_footer_sub',
 		'type'          => 'button_group',
 		'conditional_logic' => [
@@ -139,9 +139,9 @@ if ( '_custom' !== get_theme_mod( 'jupiterx_footer_type', '' ) ) {
 		],
 		'wrapper'       => [ 'width' => '50' ],
 		'choices'       => [
-			'global' => __( 'Global', 'jupiterx-lite' ),
-			'1'      => __( 'Yes', 'jupiterx-lite' ),
-			''       => __( 'No', 'jupiterx-lite' ),
+			'global' => __( 'Global', 'jupiterx' ),
+			'1'      => __( 'Yes', 'jupiterx' ),
+			''       => __( 'No', 'jupiterx' ),
 		],
 		'default_value' => 'global',
 	] );
@@ -152,7 +152,7 @@ if ( 'full_width' === get_theme_mod( 'jupiterx_site_width', 'full_width' ) ) {
 	acf_add_local_field( [
 		'key'           => "{$key}_behavior",
 		'parent'        => $parent,
-		'label'         => __( 'Behavior', 'jupiterx-lite' ),
+		'label'         => __( 'Behavior', 'jupiterx' ),
 		'name'          => 'jupiterx_footer_behavior',
 		'type'          => 'button_group',
 		'conditional_logic' => [
@@ -182,9 +182,9 @@ if ( 'full_width' === get_theme_mod( 'jupiterx_site_width', 'full_width' ) ) {
 			],
 		],
 		'choices'       => [
-			'global' => __( 'Global', 'jupiterx-lite' ),
-			'static' => __( 'Static', 'jupiterx-lite' ),
-			'fixed'  => __( 'Fixed', 'jupiterx-lite' ),
+			'global' => __( 'Global', 'jupiterx' ),
+			'static' => __( 'Static', 'jupiterx' ),
+			'fixed'  => __( 'Fixed', 'jupiterx' ),
 		],
 		'default_value' => 'global',
 	] );

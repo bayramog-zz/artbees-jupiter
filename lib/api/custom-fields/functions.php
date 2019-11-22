@@ -267,6 +267,10 @@ function jupiterx_cf_style_header_position() {
 
 	$selector = jupiterx_get_post_selector( '.jupiterx-header[data-jupiterx-behavior="fixed"]' );
 
+	if ( ! $selector ) {
+		return;
+	}
+
 	if ( 'bottom' === $header_position ) {
 		return sprintf(
 			'%1$s { top: auto !important; bottom: 0; border-bottom-width: 0; }',

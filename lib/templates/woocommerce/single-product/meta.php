@@ -28,13 +28,13 @@ global $product;
 
 	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
 
-		<span class="sku_wrapper"><span class="jupiterx-product-sku-title"><?php esc_html_e( 'SKU:', 'jupiterx-lite' ); ?></span> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'jupiterx-lite' ); ?></span></span>
+		<span class="sku_wrapper"><span class="jupiterx-product-sku-title"><?php esc_html_e( 'SKU:', 'jupiterx' ); ?></span> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'jupiterx' ); ?></span></span>
 
 	<?php endif; ?>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in"><span class="jupiterx-product-category-title">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'jupiterx-lite' ) . '</span><span class="product-categories"> ', '</span></span>' ); ?>
+	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in"><span class="jupiterx-product-category-title">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'jupiterx' ) . '</span><span class="product-categories"> ', '</span></span>' ); ?>
 
-	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as"><span class="jupiterx-product-tag-title">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'jupiterx-lite' ) . '</span><span class="product-tags"> ', '</span></span>' ); ?>
+	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as"><span class="jupiterx-product-tag-title">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'jupiterx' ) . '</span><span class="product-tags"> ', '</span></span>' ); ?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 

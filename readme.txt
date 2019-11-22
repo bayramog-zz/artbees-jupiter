@@ -1,9 +1,9 @@
 === Jupiter X ===
 Contributors: Artbees
 Requires at least: 4.7
-Tested up to: 5.2.4
+Tested up to: 5.3
 Requires PHP: 5.6
-Version: 1.12.0
+Version: 1.13.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 All-in-one platform to create pixel perfect websites, fast & easy.

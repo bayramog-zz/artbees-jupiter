@@ -49,19 +49,19 @@ acf_add_local_field_group( [
 	'fields' => [
 		[
 			'key'           => 'field_jupiterx_taxonomy_layout',
-			'label'         => __( 'Layout', 'jupiterx-lite' ),
+			'label'         => __( 'Layout', 'jupiterx' ),
 			'name'          => 'jupiterx_layout',
 			'type'          => 'select',
 			'wrapper'       => [ 'width' => '50' ],
 			'choices'       => JupiterX_Customizer_Utils::get_layouts( [
-				'global' => __( 'Global', 'jupiterx-lite' ),
+				'global' => __( 'Global', 'jupiterx' ),
 			] ),
 			'default_value' => 'global',
 		],
 		[
 			'key'           => 'field_jupiterx_taxonomy_thumbnail_id',
 			'name'          => 'jupiterx_taxonomy_thumbnail_id',
-			'label'         => __( 'Thumbnail', 'jupiterx-lite' ),
+			'label'         => __( 'Thumbnail', 'jupiterx' ),
 			'type'          => 'image',
 			'return_format' => 'id',
 		],
@@ -83,12 +83,12 @@ acf_add_local_field_group( [
 	'fields' => [
 		[
 			'key'           => 'field_jupiterx_taxonomy_layout',
-			'label'         => __( 'Layout', 'jupiterx-lite' ),
+			'label'         => __( 'Layout', 'jupiterx' ),
 			'name'          => 'jupiterx_layout',
 			'type'          => 'select',
 			'wrapper'       => [ 'width' => '50' ],
 			'choices'       => JupiterX_Customizer_Utils::get_layouts( [
-				'global' => __( 'Global', 'jupiterx-lite' ),
+				'global' => __( 'Global', 'jupiterx' ),
 			] ),
 			'default_value' => 'global',
 		],

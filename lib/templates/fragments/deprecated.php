@@ -56,7 +56,7 @@ function jupiterx_wp_title( $title, $sep ) {
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
 		// translators: Page number.
-		$title .= " $sep " . sprintf( __( 'Page %s', 'jupiterx-lite' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'jupiterx' ), max( $paged, $page ) );
 	}
 
 	return $title;

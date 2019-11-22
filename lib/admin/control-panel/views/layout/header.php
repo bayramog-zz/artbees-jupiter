@@ -6,7 +6,7 @@ wp_print_request_filesystem_credentials_modal();
 		<span class="jupiterx-cp-jupiterx-logo"></span>
 		<strong>
 			<span>
-				<?php esc_html_e( 'Control Panel', 'jupiterx-lite' ); ?>
+				<?php esc_html_e( 'Control Panel', 'jupiterx' ); ?>
 			</span>
 		</strong>
 	</div>

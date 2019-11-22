@@ -164,6 +164,6 @@ add_action( 'page_attributes_meta_box_template', 'jupiterx_add_template_help_lin
  */
 function jupiterx_add_template_help_link() {
 	if ( jupiterx_is_help_links() ) {
-		echo '<a class="jupiterx-template-help-link" target="_blank" href="https://themes.artbees.net/docs/setting-page-template/">' . esc_html__( 'Help', 'jupiterx-lite' ) . '</a>';
+		echo '<a class="jupiterx-template-help-link" target="_blank" href="https://themes.artbees.net/docs/setting-page-template/">' . esc_html__( 'Help', 'jupiterx' ) . '</a>';
 	}
 }

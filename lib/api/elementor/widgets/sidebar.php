@@ -51,13 +51,13 @@ function jupiterx_elementor_sidebar_add_settings( $element ) {
 	$element->add_control(
 		'jupiterx_location',
 		[
-			'label' => __( 'Location', 'jupiterx-lite' ),
-			'description' => __( 'Content inherits styles from <strong>Customizer > Sidebar</strong> and Footer from <strong>Customizer > Footer</strong>.', 'jupiterx-lite' ),
+			'label' => __( 'Location', 'jupiterx' ),
+			'description' => __( 'Content inherits styles from <strong>Customizer > Sidebar</strong> and Footer from <strong>Customizer > Footer</strong>.', 'jupiterx' ),
 			'type' => 'select',
 			'options' => [
-				'' => __( 'Default', 'jupiterx-lite' ),
-				'sidebar' => __( 'Content', 'jupiterx-lite' ),
-				'footer-widgets' => __( 'Footer', 'jupiterx-lite' ),
+				'' => __( 'Default', 'jupiterx' ),
+				'sidebar' => __( 'Content', 'jupiterx' ),
+				'footer-widgets' => __( 'Footer', 'jupiterx' ),
 			],
 			'prefix_class' => 'jupiterx-',
 		]

@@ -133,7 +133,7 @@ final class _JupiterX_Load_Adobe_Fonts {
 	 * @access public
 	 */
 	public function elementor_font_group( $font_groups ) {
-		$new_group['jupiterx-typekit-fonts'] = __( 'Adobe Fonts', 'jupiterx-lite' );
+		$new_group['jupiterx-typekit-fonts'] = __( 'Adobe Fonts', 'jupiterx' );
 		$font_groups                         = array_merge( $new_group, $font_groups );
 		return $font_groups;
 	}

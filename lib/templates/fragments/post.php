@@ -105,7 +105,7 @@ function jupiterx_post_search_title() {
 
 	jupiterx_open_markup_e( 'jupiterx_search_title', 'h1', [ 'class' => 'jupiterx-search-title' ] );
 
-		printf( '%1$s%2$s', jupiterx_output( 'jupiterx_search_title_text', __( 'Search results for: ', 'jupiterx-lite' ) ), get_search_query() ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
+		printf( '%1$s%2$s', jupiterx_output( 'jupiterx_search_title_text', __( 'Search results for: ', 'jupiterx' ) ), get_search_query() ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
 
 	jupiterx_close_markup_e( 'jupiterx_search_title', 'h1' );
 }
@@ -126,7 +126,7 @@ function jupiterx_post_404_title() {
 
 	jupiterx_open_markup_e( 'jupiterx_404_title', 'h1', [ 'class' => 'jupiterx-404-title' ] );
 
-		jupiterx_output_e( 'jupiterx_404_title_text', __( '404', 'jupiterx-lite' ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
+		jupiterx_output_e( 'jupiterx_404_title_text', __( '404', 'jupiterx' ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
 
 	jupiterx_close_markup_e( 'jupiterx_404_title', 'h1' );
 }
@@ -512,7 +512,7 @@ function jupiterx_post_more_link( $output ) {
 		)
 	);
 
-		$output .= jupiterx_output( 'jupiterx_post_more_link_text', __( 'Continue reading', 'jupiterx-lite' ) );
+		$output .= jupiterx_output( 'jupiterx_post_more_link_text', __( 'Continue reading', 'jupiterx' ) );
 
 	$output .= jupiterx_close_markup( 'jupiterx_post_more_link', 'a' );
 
@@ -530,7 +530,7 @@ jupiterx_add_smart_action( 'jupiterx_post_body', 'jupiterx_post_content_navigati
 function jupiterx_post_content_navigation() {
 	echo wp_link_pages(
 		array(
-			'before' => jupiterx_open_markup( 'jupiterx_post_content_navigation', 'p', array( 'class' => 'font-weight-bold' ) ) . jupiterx_output( 'jupiterx_post_content_navigation_text', __( 'Pages:', 'jupiterx-lite' ) ),
+			'before' => jupiterx_open_markup( 'jupiterx_post_content_navigation', 'p', array( 'class' => 'font-weight-bold' ) ) . jupiterx_output( 'jupiterx_post_content_navigation_text', __( 'Pages:', 'jupiterx' ) ),
 			'after'  => jupiterx_close_markup( 'jupiterx_post_content_navigation', 'p' ),
 			'echo'   => false,
 		)
@@ -631,7 +631,7 @@ function jupiterx_previous_post_link( $output, $format, $link, $post ) {
 
 			$output .= jupiterx_open_markup( 'jupiterx_previous_label[_post_navigation]', 'span', 'class=jupiterx-post-navigation-label' );
 
-				$output .= jupiterx_output( 'jupiterx_previous_label_text[_post_navigation]', __( 'Previous', 'jupiterx-lite' ) );
+				$output .= jupiterx_output( 'jupiterx_previous_label_text[_post_navigation]', __( 'Previous', 'jupiterx' ) );
 
 			$output .= jupiterx_close_markup( 'jupiterx_previous_label[_post_navigation]', 'span' );
 
@@ -682,7 +682,7 @@ function jupiterx_next_post_link( $output, $format, $link, $post ) {
 
 			$output .= jupiterx_open_markup( 'jupiterx_next_label[_post_navigation]', 'span', 'class=jupiterx-post-navigation-label' );
 
-				$output .= jupiterx_output( 'jupiterx_next_label_text[_post_navigation]', __( 'Next', 'jupiterx-lite' ) );
+				$output .= jupiterx_output( 'jupiterx_next_label_text[_post_navigation]', __( 'Next', 'jupiterx' ) );
 
 			$output .= jupiterx_close_markup( 'jupiterx_next_label[_post_navigation]', 'span' );
 
@@ -918,7 +918,7 @@ function jupiterx_post_related() {
 	 */
 	$thumbnail_attr = apply_filters( 'jupiterx_post_related_thumbnail_attr', [ 'data-object-fit' => 'cover' ] );
 
-	$related_posts_label = __( 'Recommended Posts', 'jupiterx-lite' );
+	$related_posts_label = __( 'Recommended Posts', 'jupiterx' );
 
 	$post_id      = get_the_ID();
 	$post_type    = get_post_type();
@@ -932,7 +932,7 @@ function jupiterx_post_related() {
 	// Change taxonomy.
 	if ( 'portfolio' === $post_type ) {
 		$taxonomy            = 'portfolio_category';
-		$related_posts_label = __( 'Related Works', 'jupiterx-lite' );
+		$related_posts_label = __( 'Related Works', 'jupiterx' );
 	}
 
 	// Prepare terms.
@@ -1101,7 +1101,7 @@ function jupiterx_posts_pagination() {
 				$current
 			);
 
-				jupiterx_output_e( 'jupiterx_previous_text[_posts_pagination]', __( 'Previous', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_previous_text[_posts_pagination]', __( 'Previous', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_previous_link[_posts_pagination]', 'a' );
 
@@ -1196,7 +1196,7 @@ function jupiterx_posts_pagination() {
 				$current
 			);
 
-				jupiterx_output_e( 'jupiterx_next_text[_posts_pagination]', __( 'Next', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_next_text[_posts_pagination]', __( 'Next', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_next_link[_posts_pagination]', 'a' );
 
@@ -1221,7 +1221,7 @@ function jupiterx_no_post() {
 
 			jupiterx_open_markup_e( 'jupiterx_post_title', 'h1', array( 'class' => 'jupiterx-post-title' ) );
 
-				jupiterx_output_e( 'jupiterx_no_post_article_title_text', __( 'Whoops, no result found!', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_no_post_article_title_text', __( 'Whoops, no result found!', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_post_title', 'h1' );
 
@@ -1233,7 +1233,7 @@ function jupiterx_no_post() {
 
 				jupiterx_open_markup_e( 'jupiterx_no_post_article_content', 'p' );
 
-					jupiterx_output_e( 'jupiterx_no_post_article_content_text', __( 'It looks like nothing was found at this location. Try a new search?', 'jupiterx-lite' ) );
+					jupiterx_output_e( 'jupiterx_no_post_article_content_text', __( 'It looks like nothing was found at this location. Try a new search?', 'jupiterx' ) );
 
 				jupiterx_close_markup_e( 'jupiterx_no_post_article_content', 'p' );
 
@@ -1263,7 +1263,7 @@ function jupiterx_post_password_form() {
 	// Notice.
 	$output = jupiterx_open_markup( 'jupiterx_password_form_notice', 'p', array( 'class' => 'alert alert-warning' ) );
 
-		$output .= jupiterx_output( 'jupiterx_password_form_notice_text', __( 'This post is protected. To view it, enter the password below!', 'jupiterx-lite' ) );
+		$output .= jupiterx_output( 'jupiterx_password_form_notice_text', __( 'This post is protected. To view it, enter the password below!', 'jupiterx' ) );
 
 	$output .= jupiterx_close_markup( 'jupiterx_password_form_notice', 'p' );
 
@@ -1284,7 +1284,7 @@ function jupiterx_post_password_form() {
 			array(
 				'class'       => 'form-control',
 				'type'        => 'password',
-				'placeholder' => apply_filters( 'jupiterx_password_form_input_placeholder', __( 'Password', 'jupiterx-lite' ) ), // Automatically escaped.
+				'placeholder' => apply_filters( 'jupiterx_password_form_input_placeholder', __( 'Password', 'jupiterx' ) ), // Automatically escaped.
 				'name'        => 'post_password',
 			)
 		);
@@ -1296,7 +1296,7 @@ function jupiterx_post_password_form() {
 				'class' => 'btn btn-dark ml-2',
 				'type'  => 'submit',
 				'name'  => 'submit',
-				'value' => esc_attr( apply_filters( 'jupiterx_password_form_submit_text', __( 'Submit', 'jupiterx-lite' ) ) ),
+				'value' => esc_attr( apply_filters( 'jupiterx_password_form_submit_text', __( 'Submit', 'jupiterx' ) ) ),
 			)
 		);
 

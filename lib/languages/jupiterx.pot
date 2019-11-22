@@ -1315,11 +1315,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: lib/templates/fragments/post.php:921
+#: lib/templates/fragments/post.php:921, lib/pro/includes/customizer/blog-single/blog.php:50
 msgid "Recommended Posts"
 msgstr ""
 
-#: lib/templates/fragments/post.php:935
+#: lib/templates/fragments/post.php:935, lib/pro/includes/customizer/portfolio-single/portfolio.php:20
 msgid "Related Works"
 msgstr ""
 
@@ -1339,7 +1339,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: lib/templates/fragments/product-list.php:45, lib/templates/fragments/product-page.php:109, lib/pro/includes/customizer/product-list/product-list.php:23, lib/pro/includes/customizer/product-page/product-page.php:27
+#: lib/templates/fragments/product-list.php:45, lib/templates/fragments/product-page.php:111, lib/pro/includes/customizer/product-list/product-list.php:23, lib/pro/includes/customizer/product-page/product-page.php:27
 msgid "Out of Stock"
 msgstr ""
 
@@ -1964,8 +1964,8 @@ msgstr ""
 #. translators: 1: Strong tag. 2. Strong tag close. 3. Div tag open. 4. Missed plugins Markup. 5. Div tag close.
 #: lib/admin/setup-wizard/includes/ajax.php:144
 msgid ""
-"You are not allowed to install a new plugin.\n"
-"				Please install required plugins that listed below via your %1$s Network Admin > Plugins %2$s or contact your Network Admin.\n"
+"You are not allowed to install a new plugin.\n"
+"				Please install required plugins that listed below via your %1$s Network Admin > Plugins %2$s or contact your Network Admin.\n"
 "				Required plugins for this template: %3$s %4$s %5$s"
 msgstr ""
 
@@ -2131,7 +2131,7 @@ msgid "Quantity"
 msgstr ""
 
 #: lib/templates/woocommerce/cart/cart.php:32, lib/templates/woocommerce/cart/cart.php:119
-msgid "Total"
+msgid "Subtotal"
 msgstr ""
 
 #: lib/templates/woocommerce/cart/cart.php:55
@@ -2659,7 +2659,7 @@ msgstr ""
 msgid "Author Box"
 msgstr ""
 
-#: lib/admin/custom-fields/post-types/options/main.php:256, lib/pro/includes/customizer/blog-single/blog.php:50, lib/pro/includes/customizer/portfolio-single/portfolio.php:20
+#: lib/admin/custom-fields/post-types/options/main.php:256
 msgid "Related Posts"
 msgstr ""
 

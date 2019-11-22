@@ -146,7 +146,7 @@ function jupiterx_footer_sub_copyright() {
 
 		$default_copyright = sprintf(
 			// translators: Footer credits. Date followed by the name of the website.
-			__( '&#x000A9; %1$s - %2$s. All rights reserved.', 'jupiterx-lite' ),
+			__( '&#x000A9; %1$s - %2$s. All rights reserved.', 'jupiterx' ),
 			date( 'Y' ),
 			get_bloginfo( 'name' )
 		);

@@ -31,7 +31,7 @@ class JupiterX_Field_Widget_Area extends acf_field {
 		$this->name = 'widget_area';
 
 		// label (string) Multiple words, can include spaces, visible when selecting a field type.
-		$this->label = __( 'Widget Area', 'jupiterx-lite' );
+		$this->label = __( 'Widget Area', 'jupiterx' );
 
 		// category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME.
 		$this->category = 'relational';
@@ -43,7 +43,7 @@ class JupiterX_Field_Widget_Area extends acf_field {
 
 		// l10n (array) Array of strings that are used in JavaScript. This allows JS strings to be translated in PHP and loaded via: var message = acf._e('widget_area', 'error');.
 		$this->l10n = array(
-			'error' => __( 'Error! Please select a valid widget area.', 'jupiterx-lite' ),
+			'error' => __( 'Error! Please select a valid widget area.', 'jupiterx' ),
 		);
 
 		parent::__construct();
@@ -61,8 +61,8 @@ class JupiterX_Field_Widget_Area extends acf_field {
 	 */
 	public function render_field_settings( $field ) {
 		acf_render_field_setting( $field, array(
-			'label'        => __( 'Default Value', 'jupiterx-lite' ),
-			'instructions' => __( 'Enter default widget area slug', 'jupiterx-lite' ),
+			'label'        => __( 'Default Value', 'jupiterx' ),
+			'instructions' => __( 'Enter default widget area slug', 'jupiterx' ),
 			'name'         => 'default_value',
 			'type'         => 'text',
 		));
@@ -84,7 +84,7 @@ class JupiterX_Field_Widget_Area extends acf_field {
 
 		// Initial value of global.
 		$selected = selected( $field['value'], 'global' );
-		echo sprintf( '<option value="%1$s" %3$s>%2$s</option>', 'global', esc_html__( 'Global', 'jupiterx-lite' ), esc_attr( $selected ) );
+		echo sprintf( '<option value="%1$s" %3$s>%2$s</option>', 'global', esc_html__( 'Global', 'jupiterx' ), esc_attr( $selected ) );
 
 		// Options for list of sidebars available.
 		foreach ( $wp_registered_sidebars as $widget_area_key => $widget_area_properties ) {

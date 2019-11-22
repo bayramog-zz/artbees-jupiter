@@ -31,7 +31,7 @@ function jupiterx_get_pro_badge() {
 	return sprintf(
 		'<img class="jupiterx-pro-badge" src="%1$s" alt="%2$s" />',
 		jupiterx_get_pro_badge_url(),
-		esc_html__( 'Jupiter X Pro', 'jupiterx-lite' )
+		esc_html__( 'Jupiter X Pro', 'jupiterx' )
 	);
 }
 

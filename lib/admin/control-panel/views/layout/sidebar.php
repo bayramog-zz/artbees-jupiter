@@ -24,10 +24,10 @@ $default = reset( $sections );
 			<a class="jupiterx-cp-sidebar-link" href="#<?php echo esc_attr( $section['href'] ); ?>">
 				<?php echo esc_html( $section['title'] ); ?>
 				<?php if ( 'home' === $key && ! jupiterx_is_registered() && jupiterx_is_premium() ): ?>
-					<img class="jupiterx-premium-warning-badge" src="<?php echo esc_url( JUPITERX_ADMIN_URL . 'control-panel/assets/images/warning-badge.svg' ); ?>" title="<?php _e( 'Activate Product', 'jupiterx-lite' ); ?>" alt="Warning icon" width="16" height="16"/>
+					<img class="jupiterx-premium-warning-badge" src="<?php echo esc_url( JUPITERX_ADMIN_URL . 'control-panel/assets/images/warning-badge.svg' ); ?>" title="<?php _e( 'Activate Product', 'jupiterx' ); ?>" alt="Warning icon" width="16" height="16"/>
 				<?php endif; ?>
 				<?php if ( 'system_status' === $key && count( $sysinfo_warnings ) > 0 ): ?>
-					<img class="jupiterx-premium-warning-badge" src="<?php echo esc_url( JUPITERX_ADMIN_URL . 'control-panel/assets/images/warning-badge.svg' ); ?>" title="<?php _e( 'Resolve issues', 'jupiterx-lite' ); ?>" alt="Warning icon" width="16" height="16"/>
+					<img class="jupiterx-premium-warning-badge" src="<?php echo esc_url( JUPITERX_ADMIN_URL . 'control-panel/assets/images/warning-badge.svg' ); ?>" title="<?php _e( 'Resolve issues', 'jupiterx' ); ?>" alt="Warning icon" width="16" height="16"/>
 				<?php endif; ?>
 			</a>
 		</li>

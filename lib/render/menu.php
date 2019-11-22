@@ -6,6 +6,42 @@
  *
  * @since   1.0.0
  */
+jupiterx_add_smart_action( 'after_setup_theme', 'jupiterx_do_register_default_menu' );
+/**
+ * Register default menu.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function jupiterx_do_register_default_menu() {
+
+	// Stop here if doing ajax or a menu already exists.
+	if ( wp_doing_ajax() || wp_get_nav_menus() ) {
+		return;
+	}
+
+	// Check TGMPA for template installing proccess to avoid adding nav menu item.
+	if ( 'tgmpa-install-plugins' === jupiterx_get( 'page' ) ) {
+		return;
+	}
+
+	$name = __( 'Navigation', 'jupiterx' );
+
+	// Set up a default menu if it doesn't exist.
+	if ( ! wp_get_nav_menu_object( $name ) ) {
+		wp_update_nav_menu_item(
+			wp_create_nav_menu( $name ),
+			0,
+			array(
+				'menu-item-title'   => __( 'Home', 'jupiterx' ),
+				'menu-item-classes' => 'home',
+				'menu-item-url'     => home_url( '/' ),
+				'menu-item-status'  => 'publish',
+			)
+		);
+	}
+}
 
 jupiterx_add_smart_action( 'after_setup_theme', 'jupiterx_do_register_nav_menus' );
 /**
@@ -17,8 +53,8 @@ jupiterx_add_smart_action( 'after_setup_theme', 'jupiterx_do_register_nav_menus'
  */
 function jupiterx_do_register_nav_menus() {
 	register_nav_menus( array(
-		'primary'   => __( 'Primary Menu', 'jupiterx-lite' ),
-		'subfooter' => __( 'Sub Footer Menu', 'jupiterx-lite' ),
+		'primary'   => __( 'Primary Menu', 'jupiterx' ),
+		'subfooter' => __( 'Sub Footer Menu', 'jupiterx' ),
 	) );
 }
 

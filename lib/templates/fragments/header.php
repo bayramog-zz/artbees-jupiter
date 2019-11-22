@@ -35,6 +35,33 @@ function jupiterx_head_pingback() {
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<?php
 }
+jupiterx_add_smart_action( 'wp_head', 'jupiterx_favicon' );
+/**
+ * Echo head favicon if no icon was added via the customizer.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function jupiterx_favicon() {
+
+	// Stop here if and icon was added via the customizer.
+	if ( function_exists( 'has_site_icon' ) && has_site_icon() ) {
+		return;
+	}
+
+	$url = file_exists( get_stylesheet_directory() . '/favicon.ico' ) ? get_stylesheet_directory_uri() . '/favicon.ico' : JUPITERX_URL . 'favicon.ico';
+
+	jupiterx_selfclose_markup_e(
+		'jupiterx_favicon',
+		'link',
+		array(
+			'rel'  => 'Shortcut Icon',
+			'href' => $url, // Automatically escaped.
+			'type' => 'image/x-icon',
+		)
+	);
+}
 
 jupiterx_add_filter( 'jupiterx_register_fonts', 'jupiterx_add_typography_fonts' );
 /**
@@ -315,7 +342,7 @@ function jupiterx_navbar_toggler() {
 			'data-target'   => '#jupiterxSiteNavbar',
 			'aria-controls' => 'jupiterxSiteNavbar',
 			'aria-expanded' => 'false',
-			'aria-label'    => __( 'Toggle navigation', 'jupiterx-lite' ),
+			'aria-label'    => __( 'Toggle navigation', 'jupiterx' ),
 		]
 	);
 

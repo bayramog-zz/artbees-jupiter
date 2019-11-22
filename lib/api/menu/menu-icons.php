@@ -75,79 +75,79 @@ class JupiterX_Menu_Icons extends Icon_Picker_Type_Font {
 		$items = [
 			[
 				'id'   => 'jupiterx-icon-creative-market',
-				'name' => __( 'Creative Market', 'jupiterx-lite' ),
+				'name' => __( 'Creative Market', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-long-arrow',
-				'name' => __( 'Long Arrow', 'jupiterx-lite' ),
+				'name' => __( 'Long Arrow', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-search-1',
-				'name' => __( 'Search 1', 'jupiterx-lite' ),
+				'name' => __( 'Search 1', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-search-2',
-				'name' => __( 'Search 2', 'jupiterx-lite' ),
+				'name' => __( 'Search 2', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-search-3',
-				'name' => __( 'Search 3', 'jupiterx-lite' ),
+				'name' => __( 'Search 3', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-search-4',
-				'name' => __( 'Search 4', 'jupiterx-lite' ),
+				'name' => __( 'Search 4', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-share-email',
-				'name' => __( 'Share E-Mail', 'jupiterx-lite' ),
+				'name' => __( 'Share E-Mail', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-1',
-				'name' => __( 'Shopping Cart 1', 'jupiterx-lite' ),
+				'name' => __( 'Shopping Cart 1', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-2',
-				'name' => __( 'Shopping Cart 2', 'jupiterx-lite' ),
+				'name' => __( 'Shopping Cart 2', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-3',
-				'name' => __( 'Shopping Cart 3', 'jupiterx-lite' ),
+				'name' => __( 'Shopping Cart 3', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-4',
-				'name' => __( 'Shopping cart 4', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 4', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-5',
-				'name' => __( 'Shopping cart 5', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 5', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-6',
-				'name' => __( 'Shopping cart 6', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 6', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-7',
-				'name' => __( 'Shopping cart 7', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 7', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-8',
-				'name' => __( 'Shopping cart 8', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 8', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-9',
-				'name' => __( 'Shopping cart 9', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 9', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-shopping-cart-10',
-				'name' => __( 'Shopping cart 10', 'jupiterx-lite' ),
+				'name' => __( 'Shopping cart 10', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-zillow',
-				'name' => __( 'Zillow', 'jupiterx-lite' ),
+				'name' => __( 'Zillow', 'jupiterx' ),
 			],
 			[
 				'id'   => 'jupiterx-icon-zomato',
-				'name' => __( 'Zomato', 'jupiterx-lite' ),
+				'name' => __( 'Zomato', 'jupiterx' ),
 			],
 		];
 

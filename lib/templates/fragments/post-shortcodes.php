@@ -18,7 +18,7 @@ jupiterx_add_smart_action( 'jupiterx_post_meta_date', 'jupiterx_post_meta_date_s
 function jupiterx_post_meta_date_shortcode() {
 	jupiterx_open_markup_e( 'jupiterx_post_meta_date_prefix', 'span' );
 
-		jupiterx_output_e( 'jupiterx_post_meta_date_prefix_text', __( 'Posted on ', 'jupiterx-lite' ) );
+		jupiterx_output_e( 'jupiterx_post_meta_date_prefix_text', __( 'Posted on ', 'jupiterx' ) );
 
 	jupiterx_close_markup_e( 'jupiterx_post_meta_date_prefix', 'span' );
 
@@ -47,7 +47,7 @@ jupiterx_add_smart_action( 'jupiterx_post_meta_author', 'jupiterx_post_meta_auth
 function jupiterx_post_meta_author_shortcode() {
 	jupiterx_open_markup_e( 'jupiterx_post_meta_author_prefix', 'span' );
 
-		jupiterx_output_e( 'jupiterx_post_meta_author_prefix_text', __( 'By ', 'jupiterx-lite' ) );
+		jupiterx_output_e( 'jupiterx_post_meta_author_prefix_text', __( 'By ', 'jupiterx' ) );
 
 	jupiterx_close_markup_e( 'jupiterx_post_meta_author_prefix', 'span' );
 
@@ -124,14 +124,14 @@ function jupiterx_post_meta_comments_shortcode() {
 	$comments_number = (int) get_comments_number( $post->ID );
 
 	if ( $comments_number < 1 ) {
-		$comment_text = jupiterx_output( 'jupiterx_post_meta_empty_comment_text', __( 'Leave a comment', 'jupiterx-lite' ) );
+		$comment_text = jupiterx_output( 'jupiterx_post_meta_empty_comment_text', __( 'Leave a comment', 'jupiterx' ) );
 	} elseif ( 1 === $comments_number ) {
-		$comment_text = jupiterx_output( 'jupiterx_post_meta_comments_text_singular', __( '1 comment', 'jupiterx-lite' ) );
+		$comment_text = jupiterx_output( 'jupiterx_post_meta_comments_text_singular', __( '1 comment', 'jupiterx' ) );
 	} else {
 		$comment_text = jupiterx_output(
 			'jupiterx_post_meta_comments_text_plural',
 			// translators: Number of comments. Plural.
-			__( '%s comments', 'jupiterx-lite' )
+			__( '%s comments', 'jupiterx' )
 		);
 	}
 
@@ -194,7 +194,7 @@ function jupiterx_post_meta_tags_shortcode() {
 
 	printf(
 		'%1$s%2$s',
-		jupiterx_output( 'jupiterx_post_meta_tags_prefix', __( ' ', 'jupiterx-lite' ) ), // @codingStandardsIgnoreLine
+		jupiterx_output( 'jupiterx_post_meta_tags_prefix', __( ' ', 'jupiterx' ) ), // @codingStandardsIgnoreLine
 		join( $args['separator'], $args['links'] ) // @codingStandardsIgnoreLine
 	);
 }
@@ -246,7 +246,7 @@ function jupiterx_post_meta_categories_shortcode() {
 
 	$prefix = jupiterx_open_markup( 'jupiterx_post_meta_categories_prefix', 'span' );
 
-	$prefix .= jupiterx_output( 'jupiterx_post_meta_categories_prefix_text', __( 'In ', 'jupiterx-lite' ) ); // @codingStandardsIgnoreLine
+	$prefix .= jupiterx_output( 'jupiterx_post_meta_categories_prefix_text', __( 'In ', 'jupiterx' ) ); // @codingStandardsIgnoreLine
 
 	$prefix .= jupiterx_close_markup( 'jupiterx_post_meta_categories_prefix', 'span' );
 
@@ -280,50 +280,50 @@ function jupiterx_post_social_share_shortcode( $markup_key, $filtered_social = [
 
 	$social_networks = [
 		'facebook'    => [
-			'label'  => __( 'Share on Facebook', 'jupiterx-lite' ),
-			'name'   => __( 'Facebook', 'jupiterx-lite' ),
+			'label'  => __( 'Share on Facebook', 'jupiterx' ),
+			'name'   => __( 'Facebook', 'jupiterx' ),
 			'url'    => 'https://facebook.com/sharer/sharer.php?u=%1$s',
 			'icon'   => 'facebook-f',
 		],
 		'twitter'     => [
-			'label' => __( 'Share on Twitter', 'jupiterx-lite' ),
-			'name'  => __( 'Twitter', 'jupiterx-lite' ),
+			'label' => __( 'Share on Twitter', 'jupiterx' ),
+			'name'  => __( 'Twitter', 'jupiterx' ),
 			'url'   => 'https://twitter.com/intent/tweet/?text=%2$s&url=%1$s',
 			'icon'  => 'twitter',
 		],
 		'pinterest'   => [
-			'label' => __( 'Share on Pinterest', 'jupiterx-lite' ),
-			'name'  => __( 'Pinterest', 'jupiterx-lite' ),
+			'label' => __( 'Share on Pinterest', 'jupiterx' ),
+			'name'  => __( 'Pinterest', 'jupiterx' ),
 			'url'   => 'https://pinterest.com/pin/create/button/?url=%1$s&media=%1$s&description=%2$s',
 			'icon'  => 'pinterest-p',
 		],
 		'linkedin'    => [
-			'label' => __( 'Share on LinkedIn', 'jupiterx-lite' ),
-			'name'  => __( 'LinkedIn', 'jupiterx-lite' ),
+			'label' => __( 'Share on LinkedIn', 'jupiterx' ),
+			'name'  => __( 'LinkedIn', 'jupiterx' ),
 			'url'   => 'https://www.linkedin.com/shareArticle?mini=true&url=%1$s&title=%2$s&summary=%2$s&source=%1$s',
 			'icon'  => 'linkedin-in',
 		],
 		'google-plus' => [
-			'label' => __( 'Share on Google+', 'jupiterx-lite' ),
-			'name'  => __( 'Google+', 'jupiterx-lite' ),
+			'label' => __( 'Share on Google+', 'jupiterx' ),
+			'name'  => __( 'Google+', 'jupiterx' ),
 			'url'   => 'https://plus.google.com/share?url=%1$s',
 			'icon'  => 'google-plus',
 		],
 		'reddit'      => [
-			'label' => __( 'Share on Reddit', 'jupiterx-lite' ),
-			'name'  => __( 'Reddit', 'jupiterx-lite' ),
+			'label' => __( 'Share on Reddit', 'jupiterx' ),
+			'name'  => __( 'Reddit', 'jupiterx' ),
 			'url'   => 'https://reddit.com/submit/?url=%1$s',
 			'icon'  => 'reddit-alien',
 		],
 		'digg'        => [
-			'label' => __( 'Share on Digg', 'jupiterx-lite' ),
-			'name'  => __( 'Digg', 'jupiterx-lite' ),
+			'label' => __( 'Share on Digg', 'jupiterx' ),
+			'name'  => __( 'Digg', 'jupiterx' ),
 			'url'   => 'https://digg.com/submit?url=%1$s',
 			'icon'  => 'digg',
 		],
 		'email'       => [
-			'label'  => __( 'Share on Email', 'jupiterx-lite' ),
-			'name'   => __( 'Email', 'jupiterx-lite' ),
+			'label'  => __( 'Share on Email', 'jupiterx' ),
+			'name'   => __( 'Email', 'jupiterx' ),
 			'url'    => 'mailto:?subject=%2$s&body=%1$s',
 			'icon'   => 'share-email',
 			'target' => '_self',

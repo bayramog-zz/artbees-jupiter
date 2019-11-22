@@ -193,7 +193,7 @@ function jupiterx_no_widget() {
 		jupiterx_output_e(
 			'jupiterx_no_widget_notice_text',
 			// translators: Name of the widget area.
-			sprintf( __( '%s does not have any widget assigned!', 'jupiterx-lite' ), jupiterx_get_widget_area( 'name' ) )
+			sprintf( __( '%s does not have any widget assigned!', 'jupiterx' ), jupiterx_get_widget_area( 'name' ) )
 		);
 
 	jupiterx_close_markup_e( 'jupiterx_no_widget_notice', 'p' );
@@ -239,7 +239,7 @@ function jupiterx_widget_rss_content( $content ) {
 
 	$options = jupiterx_get_widget( 'options' );
 
-	$content .= '<p><a class="btn btn-light" href="' . jupiterx_get( 'url', $options ) . '" target="_blank">' . __( 'Read full feed', 'jupiterx-lite' ) . '</a><p>';
+	$content .= '<p><a class="btn btn-light" href="' . jupiterx_get( 'url', $options ) . '" target="_blank">' . __( 'Read full feed', 'jupiterx' ) . '</a><p>';
 
 	$content = preg_replace( '/<a .*?class=.?rsswidget.?/', "$0 target='_blank'", $content );
 	$content = preg_replace( '/<li/', "$0 class='jupiterx-icon-angle-right'", $content );

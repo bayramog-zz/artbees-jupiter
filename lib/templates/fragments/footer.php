@@ -24,7 +24,7 @@ function jupiterx_get_custom_footer() {
 	if ( empty( $template ) && jupiterx_is_preview() ) {
 		jupiterx_output_e( 'jupiterx_custom_footer_template_fallback', sprintf(
 			'<div class="container"><div class="alert alert-warning" role="alert">%1$s</div></div>',
-			__( 'Select a custom footer template.', 'jupiterx-lite' )
+			__( 'Select a custom footer template.', 'jupiterx' )
 		) );
 	}
 

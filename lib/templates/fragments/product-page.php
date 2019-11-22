@@ -11,6 +11,8 @@ if ( ! is_product() ) {
 	return;
 };
 
+jupiterx_add_filter( 'jupiterx_layout', 'c' );
+
 /**
  * Get the product page displayed elements.
  *
@@ -106,7 +108,7 @@ function jupiterx_wc_show_product_out_of_stock_flash() {
 
 	if ( ! $product->is_in_stock() || 'variable' === $product->get_type() ) {
 		$style = ( 'variable' === $product->get_type() ) ? 'display:none;' : '';
-		echo '<span class="jupiterx-out-of-stock" style="' . esc_attr( $style ) . '">' . esc_html__( 'Out of Stock', 'jupiterx-lite' ) . '</span>';
+		echo '<span class="jupiterx-out-of-stock" style="' . esc_attr( $style ) . '">' . esc_html__( 'Out of Stock', 'jupiterx' ) . '</span>';
 	}
 }
 

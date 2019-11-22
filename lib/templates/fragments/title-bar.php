@@ -80,7 +80,7 @@ function jupiterx_main_header_custom() {
 	if ( empty( $template ) && jupiterx_is_preview() ) {
 		jupiterx_output_e( 'jupiterx_custom_header_template_fallback', sprintf(
 			'<div class="container"><div class="alert alert-warning" role="alert">%1$s</div></div>',
-			__( 'Select a custom title bar template.', 'jupiterx-lite' )
+			__( 'Select a custom title bar template.', 'jupiterx' )
 		) );
 	}
 

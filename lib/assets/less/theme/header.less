@@ -42,7 +42,7 @@
         max-width: @site-boxed-container-max-width - @site-container-border-width * 2;
         margin: 0 auto;
 
-        &.jupiterx-header-sticky-custom > .elementor:last-of-type {
+        &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
             max-width: @site-boxed-container-max-width - @site-container-border-width * 2;
             margin: 0 auto;
         }
@@ -55,7 +55,7 @@
         right: 0;
         visibility: hidden;
         width: auto;
-        transition: all .5s ease-in-out;
+        transition: top .5s ease-in-out;
     }
 
     // Sticked state
@@ -73,7 +73,7 @@
             }
         }
 
-        &.jupiterx-header-sticky-custom > .elementor:last-of-type {
+        &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
             top: 0;
 
             .admin-bar& {
@@ -89,20 +89,22 @@
     }
 
     // Sticky template
-    &.jupiterx-header-sticky-custom > .elementor:last-of-type {
+    &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
         position: absolute;
         visibility: hidden;
         top: -100%;
+        width: 100%;
         transition: top .5s ease-in-out;
     }
 
     .jupiterx-header-stick & {
-        &.jupiterx-header-sticky-custom > .elementor:first-of-type {
+        &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:first-of-type:not(:last-of-type),
+        &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:not(:first-of-type):not(:last-of-type) {
             width: 100%;
             visibility: hidden;
         }
 
-        &.jupiterx-header-sticky-custom > .elementor:last-of-type {
+        &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
             visibility: visible;
             position: fixed;
             width: 100%;
@@ -115,7 +117,7 @@
             position: static;
         }
 
-        .jupiterx-header-tablet-behavior-off &.jupiterx-header-sticky-custom > .elementor:last-of-type {
+        .jupiterx-header-tablet-behavior-off &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
             display: none;
         }
     }
@@ -125,7 +127,7 @@
             position: static;
         }
 
-        .jupiterx-header-mobile-behavior-off &.jupiterx-header-sticky-custom > .elementor:last-of-type {
+        .jupiterx-header-mobile-behavior-off &.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
             display: none;
         }
     }

@@ -42,7 +42,7 @@ function jupiterx_wc_template_loop_out_of_stock() {
 	global $product;
 
 	if ( ! $product->is_in_stock() ) {
-		echo '<span class="jupiterx-out-of-stock">' . esc_html__( 'Out of Stock', 'jupiterx-lite' ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="jupiterx-out-of-stock">' . esc_html__( 'Out of Stock', 'jupiterx' ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 

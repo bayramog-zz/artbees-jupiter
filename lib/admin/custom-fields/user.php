@@ -9,7 +9,7 @@
 
 acf_add_local_field_group( [
 	'key'      => 'group_jupiterx_user',
-	'title'    => __( 'Social Networks', 'jupiterx-lite' ),
+	'title'    => __( 'Social Networks', 'jupiterx' ),
 	'location' => [
 		[
 			[
@@ -25,10 +25,10 @@ acf_add_local_field_group( [
 acf_add_local_field( [
 	'key'           => 'field_jupiterx_user_email',
 	'parent'        => 'group_jupiterx_user',
-	'label'         => __( 'Email', 'jupiterx-lite' ),
+	'label'         => __( 'Email', 'jupiterx' ),
 	'name'          => 'jupiterx_user_email',
 	'type'          => 'true_false',
-	'message'       => __( 'Show Email icon', 'jupiterx-lite' ),
+	'message'       => __( 'Show Email icon', 'jupiterx' ),
 	'default_value' => true,
 ] );
 
@@ -36,7 +36,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'         => 'field_jupiterx_user_facebook',
 	'parent'      => 'group_jupiterx_user',
-	'label'       => __( 'Facebook', 'jupiterx-lite' ),
+	'label'       => __( 'Facebook', 'jupiterx' ),
 	'name'        => 'jupiterx_user_facebook',
 	'type'        => 'text',
 	'placeholder' => 'https://www.facebook.com/username',
@@ -46,7 +46,7 @@ acf_add_local_field( [
 acf_add_local_field( [
 	'key'         => 'field_jupiterx_user_twitter',
 	'parent'      => 'group_jupiterx_user',
-	'label'       => __( 'Twitter', 'jupiterx-lite' ),
+	'label'       => __( 'Twitter', 'jupiterx' ),
 	'name'        => 'jupiterx_user_twitter',
 	'type'        => 'text',
 	'placeholder' => 'https://twitter.com/username',

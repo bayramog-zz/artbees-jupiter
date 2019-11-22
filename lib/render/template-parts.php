@@ -323,9 +323,14 @@ add_action( 'template_redirect', 'jupiterx_elementor_template_types' );
  * @SuppressWarnings(PHPMD.NPathComplexity)
  */
 function jupiterx_elementor_template_types() {
+	global $post;
 
 	// Template type.
-	$template_type = jupiterx_get_field( '_elementor_template_type', 'page' );
+	$template_type = 'page';
+
+	if ( ! empty( $post->ID ) ) {
+		$template_type = get_post_meta( $post->ID, '_elementor_template_type', true );
+	}
 
 	if ( 'elementor_library' !== get_post_type() || ! in_array( $template_type, [ 'section', 'header', 'footer', 'archive', 'single' ], true ) ) {
 		return;

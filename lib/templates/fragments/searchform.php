@@ -34,7 +34,7 @@ function jupiterx_search_form() {
 			array(
 				'class'       => 'form-control',
 				'type'        => 'search',
-				'placeholder' => __( 'Search', 'jupiterx-lite' ), // Automatically escaped.
+				'placeholder' => __( 'Search', 'jupiterx' ), // Automatically escaped.
 				'value'       => esc_attr( get_search_query() ),
 				'name'        => 's',
 			)

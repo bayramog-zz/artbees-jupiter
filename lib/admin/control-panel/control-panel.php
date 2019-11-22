@@ -102,6 +102,8 @@ final class JupiterX_Control_Panel {
 	 */
 	public function init() {
 		require_once JUPITERX_CONTROL_PANEL_PATH . 'includes/js-messages.php';
+		require_once JUPITERX_CONTROL_PANEL_PATH . 'includes/class-activate-theme.php';
+		require_once JUPITERX_CONTROL_PANEL_PATH . 'includes/class-downgrade-theme.php';
 
 		/**
 		 * Hook for control panel init.
@@ -260,28 +262,40 @@ final class JupiterX_Control_Panel {
 	public function get_sections() {
 		$sections = [
 			'home' => [
-				'title'     => __( 'Home' , 'jupiterx-lite' ),
+				'title'     => __( 'Home' , 'jupiterx' ),
 				'href'      => 'home',
 				'condition' => defined( 'JUPITERX_CONTROL_PANEL_HOME' ) && JUPITERX_CONTROL_PANEL_HOME,
 				'order'     => 10,
 			],
 			'plugins' => [
-				'title'     => __( 'Plugins' , 'jupiterx-lite' ),
+				'title'     => __( 'Plugins' , 'jupiterx' ),
 				'href'      => 'install-plugins',
 				'condition' => defined( 'JUPITERX_CONTROL_PANEL_PLUGINS' ) && JUPITERX_CONTROL_PANEL_PLUGINS,
 				'order'     => 20,
 			],
 			'templates' => [
-				'title'     => __( 'Templates' , 'jupiterx-lite' ),
+				'title'     => __( 'Templates' , 'jupiterx' ),
 				'href'      => 'install-templates',
 				'condition' => defined( 'JUPITERX_CONTROL_PANEL_TEMPLATES' ) && JUPITERX_CONTROL_PANEL_TEMPLATES,
 				'order'     => 30,
 			],
 			'free_vs_pro' => [
-				'title'     => __( 'Free vs Pro' , 'jupiterx-lite' ),
+				'title'     => __( 'Free vs Pro' , 'jupiterx' ),
 				'href'      => 'free-vs-pro',
 				'condition' => ! jupiterx_is_pro() && ! jupiterx_is_premium(),
 				'order'     => 80,
+			],
+			'updates' => [
+				'title'     => __( 'Updates' , 'jupiterx' ),
+				'href'      => 'update-theme',
+				'condition' => defined( 'JUPITERX_CONTROL_PANEL_UPDATES' ) && JUPITERX_CONTROL_PANEL_UPDATES,
+				'order'     => 60,
+			],
+			'support' => [
+				'title'     => __( 'Support' , 'jupiterx' ),
+				'href'      => 'support',
+				'condition' => defined( 'JUPITERX_CONTROL_PANEL_SUPPORT' ) && JUPITERX_CONTROL_PANEL_SUPPORT,
+				'order'     => 90,
 			],
 		];
 

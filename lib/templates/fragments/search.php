@@ -70,7 +70,7 @@ function jupiterx_search_page_search() {
 
 			jupiterx_open_markup_e( 'jupiterx_new_search_title', 'h5', array( 'class' => 'jupiterx-title' ) );
 
-				jupiterx_output_e( 'jupiterx_new_search_title_text', __( 'New search', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_new_search_title_text', __( 'New search', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_new_search_title', 'h5' );
 
@@ -80,7 +80,7 @@ function jupiterx_search_page_search() {
 
 			jupiterx_open_markup_e( 'jupiterx_new_search_subtitle', 'p' );
 
-				jupiterx_output_e( 'jupiterx_new_search_subtitle_text', __( 'If you are not happy with the below results, you may try another search.', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_new_search_subtitle_text', __( 'If you are not happy with the below results, you may try another search.', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_new_search_subtitle', 'p' );
 
@@ -106,14 +106,14 @@ function jupiterx_search_page_secondary_title() {
 
 	jupiterx_open_markup_e( 'jupiterx_search_secondary_title', 'h3', [ 'class' => 'jupiterx-search-secondary-title' ] );
 
-		printf( '%1$s%2$s', jupiterx_output( 'jupiterx_search_secondary_title_text', __( 'Search results for: ', 'jupiterx-lite' ) ), get_search_query() ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
+		printf( '%1$s%2$s', jupiterx_output( 'jupiterx_search_secondary_title_text', __( 'Search results for: ', 'jupiterx' ) ), get_search_query() ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
 
 	jupiterx_close_markup_e( 'jupiterx_search_secondary_title', 'h3' );
 
 	jupiterx_open_markup_e( 'jupiterx_search_secondary_subtitle', 'p', [ 'class' => 'jupiterx-search-secondary-subtitle' ] );
 
 		// translators: Number of found search posts.
-		printf( jupiterx_output( 'jupiterx_search_secondary_title_text', __( 'We have found some results with the word you searched.', 'jupiterx-lite' ) ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
+		printf( jupiterx_output( 'jupiterx_search_secondary_title_text', __( 'We have found some results with the word you searched.', 'jupiterx' ) ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Pending security audit.
 
 	jupiterx_close_markup_e( 'jupiterx_search_secondary_subtitle', 'p' );
 }

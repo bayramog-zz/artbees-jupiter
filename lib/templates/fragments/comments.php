@@ -22,7 +22,7 @@ function jupiterx_comments_title() {
 		jupiterx_output_e(
 			'jupiterx_comments_title_text', sprintf(
 				// translators: Number of comments, one or many.
-				_n( '%s Comment', '%s Comments', get_comments_number(), 'jupiterx-lite' ),
+				_n( '%s Comment', '%s Comments', get_comments_number(), 'jupiterx' ),
 				number_format_i18n( get_comments_number() )
 			)
 		);
@@ -120,7 +120,7 @@ function jupiterx_comment_badges() {
 	if ( 'trackback' === $comment->comment_type ) {
 		jupiterx_open_markup_e( 'jupiterx_trackback_badge', 'span', array( 'class' => 'jupiterx-comment-badge badge badge-pill btn-primary' ) );
 
-			jupiterx_output_e( 'jupiterx_trackback_text', __( 'Trackback', 'jupiterx-lite' ) );
+			jupiterx_output_e( 'jupiterx_trackback_text', __( 'Trackback', 'jupiterx' ) );
 
 		jupiterx_close_markup_e( 'jupiterx_trackback_badge', 'span' );
 	}
@@ -129,7 +129,7 @@ function jupiterx_comment_badges() {
 	if ( 'pingback' === $comment->comment_type ) {
 		jupiterx_open_markup_e( 'jupiterx_pingback_badge', 'span', array( 'class' => 'jupiterx-comment-badge badge badge-pill btn-primary' ) );
 
-			jupiterx_output_e( 'jupiterx_pingback_text', __( 'Pingback', 'jupiterx-lite' ) );
+			jupiterx_output_e( 'jupiterx_pingback_text', __( 'Pingback', 'jupiterx' ) );
 
 		jupiterx_close_markup_e( 'jupiterx_pingback_badge', 'span' );
 	}
@@ -138,7 +138,7 @@ function jupiterx_comment_badges() {
 	if ( '0' === $comment->comment_approved ) {
 		jupiterx_open_markup_e( 'jupiterx_moderation_badge', 'span', array( 'class' => 'jupiterx-comment-badge badge badge-pill btn-warning' ) );
 
-			jupiterx_output_e( 'jupiterx_moderation_text', __( 'Awaiting Moderation', 'jupiterx-lite' ) );
+			jupiterx_output_e( 'jupiterx_moderation_text', __( 'Awaiting Moderation', 'jupiterx' ) );
 
 		jupiterx_close_markup_e( 'jupiterx_moderation_badge', 'span' );
 	}
@@ -147,7 +147,7 @@ function jupiterx_comment_badges() {
 	if ( user_can( $comment->user_id, 'moderate_comments' ) ) {
 		jupiterx_open_markup_e( 'jupiterx_moderator_badge', 'span', array( 'class' => 'jupiterx-comment-badge badge badge-pill btn-primary' ) );
 
-			jupiterx_output_e( 'jupiterx_moderator_text', __( 'Moderator', 'jupiterx-lite' ) );
+			jupiterx_output_e( 'jupiterx_moderator_text', __( 'Moderator', 'jupiterx' ) );
 
 		jupiterx_close_markup_e( 'jupiterx_moderator_badge', 'span' );
 	}
@@ -183,7 +183,7 @@ function jupiterx_comment_metadata() {
 			jupiterx_output_e(
 				'jupiterx_comment_time_text', sprintf(
 					// translators: Date of the comment, time of the comment.
-					_x( '%1$s at %2$s', '1: date, 2: time', 'jupiterx-lite' ),
+					_x( '%1$s at %2$s', '1: date, 2: time', 'jupiterx' ),
 					get_comment_date(),
 					get_comment_time()
 				)
@@ -248,7 +248,7 @@ function jupiterx_comment_links() {
 				)
 			);
 
-				jupiterx_output_e( 'jupiterx_comment_edit_text', __( 'Edit', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_comment_edit_text', __( 'Edit', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_comment_item_link[_edit]', 'a' );
 
@@ -266,7 +266,7 @@ endif;
 				)
 			);
 
-				jupiterx_output_e( 'jupiterx_comment_link_text', __( 'Link', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_comment_link_text', __( 'Link', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_comment_item_link[_link]', 'a' );
 
@@ -286,7 +286,7 @@ jupiterx_add_smart_action( 'jupiterx_no_comment', 'jupiterx_no_comment' );
 function jupiterx_no_comment() {
 	jupiterx_open_markup_e( 'jupiterx_no_comment', 'p', 'class=jupiterx-no-comment' );
 
-		jupiterx_output_e( 'jupiterx_no_comment_text', __( 'No comment yet, add your voice below!', 'jupiterx-lite' ) );
+		jupiterx_output_e( 'jupiterx_no_comment_text', __( 'No comment yet, add your voice below!', 'jupiterx' ) );
 
 	jupiterx_close_markup_e( 'jupiterx_no_comment', 'p' );
 }
@@ -302,7 +302,7 @@ jupiterx_add_smart_action( 'jupiterx_comments_closed', 'jupiterx_comments_closed
 function jupiterx_comments_closed() {
 	jupiterx_open_markup_e( 'jupiterx_comments_closed', 'p', array( 'class' => 'alert alert-warning' ) );
 
-		jupiterx_output_e( 'jupiterx_comments_closed_text', __( 'Comments are closed for this article!', 'jupiterx-lite' ) );
+		jupiterx_output_e( 'jupiterx_comments_closed_text', __( 'Comments are closed for this article!', 'jupiterx' ) );
 
 	jupiterx_close_markup_e( 'jupiterx_comments_closed', 'p' );
 }
@@ -335,7 +335,7 @@ function jupiterx_comments_navigation() {
 		jupiterx_open_markup_e( 'jupiterx_comments_navigation_item[_previous]', 'li', 'class=jupiterx-pagination-previous page-item' );
 
 			echo get_previous_comments_link( // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Echoes HTML output.
-				jupiterx_output( 'jupiterx_previous_text[_comments_navigation]', __( 'Previous', 'jupiterx-lite' ) )
+				jupiterx_output( 'jupiterx_previous_text[_comments_navigation]', __( 'Previous', 'jupiterx' ) )
 			);
 
 		jupiterx_close_markup_e( 'jupiterx_comments_navigation_item[_previous]', 'li' );
@@ -346,7 +346,7 @@ function jupiterx_comments_navigation() {
 		jupiterx_open_markup_e( 'jupiterx_comments_navigation_item[_next]', 'li', 'class=jupiterx-pagination-next page-item ml-auto' );
 
 			echo get_next_comments_link( // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped -- Echoes HTML output.
-				jupiterx_output( 'jupiterx_next_text[_comments_navigation]', __( 'Next', 'jupiterx-lite' ) )
+				jupiterx_output( 'jupiterx_next_text[_comments_navigation]', __( 'Next', 'jupiterx' ) )
 			);
 
 		jupiterx_close_markup_e( 'jupiterx_comments_navigation_item_[_next]', 'li' );
@@ -412,7 +412,7 @@ function jupiterx_comment_form() {
 
 	$output = jupiterx_open_markup( 'jupiterx_comment_form_wrap', 'div', array( 'class' => 'jupiterx-form jupiterx-comment-form-wrap' ) );
 
-		$output .= jupiterx_render_function( 'comment_form', array( 'title_reply' => jupiterx_output( 'jupiterx_comment_form_title_text', __( 'Add a Comment', 'jupiterx-lite' ) ) ) );
+		$output .= jupiterx_render_function( 'comment_form', array( 'title_reply' => jupiterx_output( 'jupiterx_comment_form_title_text', __( 'Add a Comment', 'jupiterx' ) ) ) );
 
 	$output .= jupiterx_close_markup( 'jupiterx_comment_form_wrap', 'div' );
 
@@ -429,7 +429,7 @@ function jupiterx_comment_form() {
 		)
 	);
 
-		$submit .= jupiterx_output( 'jupiterx_comment_form_submit_text', __( 'Submit', 'jupiterx-lite' ) );
+		$submit .= jupiterx_output( 'jupiterx_comment_form_submit_text', __( 'Submit', 'jupiterx' ) );
 
 	$submit .= jupiterx_close_markup( 'jupiterx_comment_form_submit', 'button' );
 
@@ -490,7 +490,7 @@ function jupiterx_comment_form_comment() {
 
 		$output .= jupiterx_open_markup( 'jupiterx_comment_form_label[_comment]', 'label', 'class=sr-only' );
 
-			$output .= jupiterx_output( 'jupiterx_comment_form_label_text[_comment]', __( 'Comment *', 'jupiterx-lite' ) );
+			$output .= jupiterx_output( 'jupiterx_comment_form_label_text[_comment]', __( 'Comment *', 'jupiterx' ) );
 
 		$output .= jupiterx_close_markup( 'jupiterx_comment_form_label[_comment]', 'label' );
 
@@ -501,7 +501,7 @@ function jupiterx_comment_form_comment() {
 				'name'        => 'comment',
 				'required'    => '',
 				'rows'        => 8,
-				'placeholder' => __( 'Comment *', 'jupiterx-lite' ),
+				'placeholder' => __( 'Comment *', 'jupiterx' ),
 			]
 		);
 
@@ -557,7 +557,7 @@ function jupiterx_comment_form_fields( $fields ) {
 
 			$author .= jupiterx_open_markup( 'jupiterx_comment_form_label[_name]', 'label', 'class=sr-only' );
 
-				$author .= jupiterx_output( 'jupiterx_comment_form_label_text[_name]', __( 'Name *', 'jupiterx-lite' ) );
+				$author .= jupiterx_output( 'jupiterx_comment_form_label_text[_name]', __( 'Name *', 'jupiterx' ) );
 
 			$author .= jupiterx_close_markup( 'jupiterx_comment_form_label[_name]', 'label' );
 
@@ -569,7 +569,7 @@ function jupiterx_comment_form_fields( $fields ) {
 					'value'       => $commenter['comment_author'], // Automatically escaped.
 					'name'        => 'author',
 					'required'    => 'required',
-					'placeholder' => __( 'Name *', 'jupiterx-lite' ),
+					'placeholder' => __( 'Name *', 'jupiterx' ),
 				]
 			);
 
@@ -586,7 +586,7 @@ function jupiterx_comment_form_fields( $fields ) {
 
 				$email .= jupiterx_output( 'jupiterx_comment_form_label_text[_email]',
 					// translators: Whether or not submitting an email address is required.
-					sprintf( __( 'Email %s', 'jupiterx-lite' ), ( get_option( 'require_name_email' ) ? ' *' : '' ) )
+					sprintf( __( 'Email %s', 'jupiterx' ), ( get_option( 'require_name_email' ) ? ' *' : '' ) )
 				);
 
 			$email .= jupiterx_close_markup( 'jupiterx_comment_form_label[_email]', 'label' );
@@ -600,7 +600,7 @@ function jupiterx_comment_form_fields( $fields ) {
 					'name'        => 'email',
 					'required'    => get_option( 'require_name_email' ) ? 'required' : null,
 					/* translators: Email field placeholder */
-					'placeholder' => sprintf( __( 'Email %s', 'jupiterx-lite' ), ( get_option( 'require_name_email' ) ? ' *' : '' ) ),
+					'placeholder' => sprintf( __( 'Email %s', 'jupiterx' ), ( get_option( 'require_name_email' ) ? ' *' : '' ) ),
 				]
 			);
 
@@ -615,7 +615,7 @@ function jupiterx_comment_form_fields( $fields ) {
 
 			$url .= jupiterx_open_markup( 'jupiterx_comment_form_label[_url]', 'label', 'class=sr-only' );
 
-				$url .= jupiterx_output( 'jupiterx_comment_form_label_text[_url]', __( 'Website', 'jupiterx-lite' ) );
+				$url .= jupiterx_output( 'jupiterx_comment_form_label_text[_url]', __( 'Website', 'jupiterx' ) );
 
 			$url .= jupiterx_close_markup( 'jupiterx_comment_form_label[_url]', 'label' );
 
@@ -626,7 +626,7 @@ function jupiterx_comment_form_fields( $fields ) {
 					'type'        => 'text',
 					'value'       => $commenter['comment_author_url'], // Automatically escaped.
 					'name'        => 'url',
-					'placeholder' => __( 'Website', 'jupiterx-lite' ),
+					'placeholder' => __( 'Website', 'jupiterx' ),
 				)
 			);
 

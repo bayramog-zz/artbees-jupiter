@@ -75,7 +75,8 @@ body {
 }
 
 body .jupiterx-site {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+ "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   color: #212529;
   line-height: 1.5;
@@ -2384,10 +2385,14 @@ select.form-control-lg:not([size]):not([multiple]) {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: .25rem;
-  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out,
+ -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out,
+ -webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out,
+ box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out,
+ box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 .btn:hover,
@@ -5148,18 +5153,18 @@ body.jupiterx-has-border {
   transition: margin-top .45s;
 }
 
-.jupiterx-header.jupiterx-header-sticky-custom > .elementor:last-of-type {
+.jupiterx-header.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
   display: none;
 }
 
-.jupiterx-header-stick .jupiterx-header.jupiterx-header-sticky-custom > .elementor:first-of-type {
+.jupiterx-header-stick .jupiterx-header.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:first-of-type:not(:last-of-type), .jupiterx-header-stick .jupiterx-header.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:not(:first-of-type):not(:last-of-type) {
   position: absolute;
   top: -100%;
   width: 100%;
   visibility: hidden;
 }
 
-.jupiterx-header-stick .jupiterx-header.jupiterx-header-sticky-custom > .elementor:last-of-type {
+.jupiterx-header-stick .jupiterx-header.jupiterx-header-sticky-custom.jupiterx-header-custom > .elementor:last-of-type:not(:first-of-type) {
   display: block;
 }
 

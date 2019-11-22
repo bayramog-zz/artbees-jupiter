@@ -47,7 +47,7 @@ jupiterx_open_markup_e( 'jupiterx_html', 'html', str_replace( '"', '', str_repla
 			]
 		);
 
-			esc_html_e( 'Skip to content', 'jupiterx-lite' );
+			esc_html_e( 'Skip to content', 'jupiterx' );
 
 		jupiterx_close_markup_e( 'jupiterx_a11y_skip_navigation_link', 'a' );
 

@@ -81,10 +81,10 @@ final class JupiterX_Customizer_Utils {
 	 */
 	public static function get_text_decoration_choices() {
 		return [
-			'none'         => __( 'None', 'jupiterx-lite' ),
-			'underline'    => __( 'Underline', 'jupiterx-lite' ),
-			'overline'     => __( 'Overline', 'jupiterx-lite' ),
-			'line-through' => __( 'Line Through', 'jupiterx-lite' ),
+			'none'         => __( 'None', 'jupiterx' ),
+			'underline'    => __( 'Underline', 'jupiterx' ),
+			'overline'     => __( 'Overline', 'jupiterx' ),
+			'line-through' => __( 'Line Through', 'jupiterx' ),
 		];
 	}
 
@@ -129,7 +129,7 @@ final class JupiterX_Customizer_Utils {
 
 			if ( '' === $post_title ) {
 				/* translators: %d: page ID */
-				$post_title = sprintf( __( '#%d (no title)', 'jupiterx-lite' ), $page->ID );
+				$post_title = sprintf( __( '#%d (no title)', 'jupiterx' ), $page->ID );
 			}
 
 			$choices[ $page->ID ] = $post_title;
@@ -148,21 +148,21 @@ final class JupiterX_Customizer_Utils {
 	 * @return array List of layouts.
 	 */
 	public static function get_layouts( $choices = [] ) {
-		$right   = is_rtl() ? __( 'Left', 'jupiterx-lite' ) : __( 'Right', 'jupiterx-lite' );
-		$left    = is_rtl() ? __( 'Right', 'jupiterx-lite' ) : __( 'Left', 'jupiterx-lite' );
+		$right   = is_rtl() ? __( 'Left', 'jupiterx' ) : __( 'Right', 'jupiterx' );
+		$left    = is_rtl() ? __( 'Right', 'jupiterx' ) : __( 'Left', 'jupiterx' );
 		$choices = $choices;
 
 		$choices = array_merge( $choices, [
-			'c'       => __( 'No sidebar', 'jupiterx-lite' ),
+			'c'       => __( 'No sidebar', 'jupiterx' ),
 			/* translators: The sidebar position */
-			'sp_c'    => sprintf( __( 'Single Sidebar %s', 'jupiterx-lite' ), $left ),
+			'sp_c'    => sprintf( __( 'Single Sidebar %s', 'jupiterx' ), $left ),
 			/* translators: The sidebar position */
-			'c_sp'    => sprintf( __( 'Single Sidebar %s', 'jupiterx-lite' ), $right ),
+			'c_sp'    => sprintf( __( 'Single Sidebar %s', 'jupiterx' ), $right ),
 			/* translators: The sidebar position */
-			'sp_ss_c' => sprintf( __( 'Double Sidebar %s', 'jupiterx-lite' ), $left ),
+			'sp_ss_c' => sprintf( __( 'Double Sidebar %s', 'jupiterx' ), $left ),
 			/* translators: The sidebar position */
-			'c_sp_ss' => sprintf( __( 'Double Sidebar %s', 'jupiterx-lite' ), $right ),
-			'sp_c_ss' => __( 'Opposing Sidebars', 'jupiterx-lite' ),
+			'c_sp_ss' => sprintf( __( 'Double Sidebar %s', 'jupiterx' ), $right ),
+			'sp_c_ss' => __( 'Opposing Sidebars', 'jupiterx' ),
 		] );
 
 		return $choices;
@@ -225,7 +225,7 @@ final class JupiterX_Customizer_Utils {
 		}
 
 		if ( $add_default ) {
-			$terms = [ '0' => __( 'All Categories', 'jupiterx-lite' ) ] + $terms;
+			$terms = [ '0' => __( 'All Categories', 'jupiterx' ) ] + $terms;
 		}
 
 		return $terms;

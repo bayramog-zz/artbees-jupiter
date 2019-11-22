@@ -61,7 +61,7 @@ function jupiterx_register_widget_area( $args = array(), $widget_control = array
 		'jupiterx_type'                 => 'stack',
 		'jupiterx_show_widget_title'    => true,
 		'jupiterx_show_widget_badge'    => false,
-		'jupiterx_widget_badge_content' => __( 'Hello', 'jupiterx-lite' ),
+		'jupiterx_widget_badge_content' => __( 'Hello', 'jupiterx' ),
 	) );
 
 	/**

@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.7.0
+ * @version 3.8.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,10 +26,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<thead>
 			<tr>
 				<th class="product-remove">&nbsp;</th>
-				<th class="product-name"><?php esc_html_e( 'Product', 'jupiterx-lite' ); ?></th>
-				<th class="product-price"><?php esc_html_e( 'Price', 'jupiterx-lite' ); ?></th>
-				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'jupiterx-lite' ); ?></th>
-				<th class="product-subtotal"><?php esc_html_e( 'Total', 'jupiterx-lite' ); ?></th>
+				<th class="product-name"><?php esc_html_e( 'Product', 'jupiterx' ); ?></th>
+				<th class="product-price"><?php esc_html_e( 'Price', 'jupiterx' ); ?></th>
+				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'jupiterx' ); ?></th>
+				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'jupiterx' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -52,7 +52,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									sprintf(
 										'<a href="%s" class="jupiterx-icon-times" aria-label="%s" data-product_id="%s" data-product_sku="%s"></a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-										esc_html__( 'Remove this item', 'jupiterx-lite' ),
+										esc_html__( 'Remove this item', 'jupiterx' ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() )
 									),
@@ -61,7 +61,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</td>
 
-						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'jupiterx-lite' ); ?>">
+						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'jupiterx' ); ?>">
 						<?php
 
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
@@ -83,18 +83,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						// Backorder notification.
 						if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'jupiterx-lite' ) . '</p>', $product_id ) );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'jupiterx' ) . '</p>', $product_id ) );
 						}
 						?>
 						</td>
 
-						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'jupiterx-lite' ); ?>">
+						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'jupiterx' ); ?>">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
 						</td>
 
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'jupiterx-lite' ); ?>">
+						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'jupiterx' ); ?>">
 						<?php
 						if ( $_product->is_sold_individually() ) {
 							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -116,7 +116,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 						</td>
 
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'jupiterx-lite' ); ?>">
+						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'jupiterx' ); ?>">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
@@ -134,12 +134,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'jupiterx-lite' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'jupiterx-lite' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'jupiterx-lite' ); ?>"><?php esc_attr_e( 'Apply coupon', 'jupiterx-lite' ); ?></button>
+							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'jupiterx' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'jupiterx' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'jupiterx' ); ?>"><?php esc_attr_e( 'Apply coupon', 'jupiterx' ); ?></button>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'jupiterx-lite' ); ?>"><?php esc_html_e( 'Update cart', 'jupiterx-lite' ); ?></button>
+					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'jupiterx' ); ?>"><?php esc_html_e( 'Update cart', 'jupiterx' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 

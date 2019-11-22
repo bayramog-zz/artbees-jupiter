@@ -28,25 +28,25 @@ function jupiterx_wc_add_steps() {
 	$steps = [
 		'cart'     => [
 			'icon'    => '',
-			'number'  => __( '1', 'jupiterx-lite' ),
+			'number'  => __( '1', 'jupiterx' ),
 			'icon'    => 'jupiterx-icon-shopping-cart-6',
-			'title'   => get_theme_mod( 'jupiterx_checkout_cart_steps_1', __( 'Cart', 'jupiterx-lite' ) ),
+			'title'   => get_theme_mod( 'jupiterx_checkout_cart_steps_1', __( 'Cart', 'jupiterx' ) ),
 			'class'   => [ 'jupiterx-wc-step' ],
 			'divider' => true,
 		],
 		'checkout' => [
 			'icon'    => '',
-			'number'  => __( '2', 'jupiterx-lite' ),
+			'number'  => __( '2', 'jupiterx' ),
 			'icon'    => 'jupiterx-icon-credit-card',
-			'title'   => get_theme_mod( 'jupiterx_checkout_cart_steps_2', __( 'Delivery & Payment', 'jupiterx-lite' ) ),
+			'title'   => get_theme_mod( 'jupiterx_checkout_cart_steps_2', __( 'Delivery & Payment', 'jupiterx' ) ),
 			'class'   => [ 'jupiterx-wc-step' ],
 			'divider' => true,
 		],
 		'order'    => [
 			'icon'   => '',
-			'number' => __( '3', 'jupiterx-lite' ),
+			'number' => __( '3', 'jupiterx' ),
 			'icon'   => 'jupiterx-icon-check',
-			'title'  => get_theme_mod( 'jupiterx_checkout_cart_steps_3', __( 'Complete Order', 'jupiterx-lite' ) ),
+			'title'  => get_theme_mod( 'jupiterx_checkout_cart_steps_3', __( 'Complete Order', 'jupiterx' ) ),
 			'class'  => [ 'jupiterx-wc-step' ],
 		],
 	];
@@ -148,7 +148,7 @@ function jupiterx_wc_cart_quick_view() {
 
 			jupiterx_open_markup_e( 'jupiterx_mini_cart_title', 'p', 'class=jupiterx-mini-cart-title' );
 
-				jupiterx_output_e( 'jupiterx_mini_cart_title_text', __( 'Shopping cart', 'jupiterx-lite' ) );
+				jupiterx_output_e( 'jupiterx_mini_cart_title_text', __( 'Shopping cart', 'jupiterx' ) );
 
 			jupiterx_close_markup_e( 'jupiterx_mini_cart_title', 'p' );
 
